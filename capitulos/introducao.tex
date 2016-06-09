@@ -30,7 +30,7 @@ definidas as funcionalidades que serão implementadas nos próximos meses e como
 os recursos de projeto deverão ser alocados.Mesmo assim, apesar dos níveis de 
 interação entre pessoas em projetos de desenvolvimento ágil serem altos, 
 o planejamento de  release é uma tarefa dificil tanto computacionalmente quanto 
-cognitivamente, pois diversos tipos de incertezas tornam dificil a solução e 
+cognitivamente, pois diversos tipos de incertezas tornam dificil a definição e 
 estruturação do problema a ser atacado\cite{Ngo}. Desta forma, é fundamental para 
 os times de desenvolvimento ágil que o planejamento de release possua um alto 
 nível de confiabilidade\cite{McDaid}.
@@ -71,33 +71,103 @@ Vista a relevância da fase de planejamento de sprint em um projeto ágil,
 formulou-se o seguinte problema, que motiva o desenvolvimento desta pesquisa.
 
 \begin{center}
-  \textit{Dificuldade na tomada de decisões de priorização de features em 
+ \textit{Dificuldade na tomada de decisões de priorização de features em 
   Release Plannings}
 \end{center}
 
 \section{Objetivos}
 
-O objetivo geral deste trabalho consiste na análise da eficiência do uso de
-\textit{Software Analytics} para a priorização de atividades em projetos de
-desenvolvimento ágil. Os objetivos específicos desta primeira parte do trabalho
-são:
+Para uma melhor estruturação do trabalho, foi utilizado o método do
+GQM \textit{(Goal, Question, Metric)}, que foi definido pela NASA Goddard Space 
+Flight, e que propõe uma abordagem topdown para uma melhor organização de objetivos
+de um projeto. O GQM propõe uma estrutura em três níveis\cite{gqm}:
+
+\begin{itemize}
+    \item \textbf{Objetivos (Goal):} Nível conceitual, onde são definidos os 
+        objetivos do trabalho ou projeto.
+    \item \textbf{Questões (Question):} Nível operacional, onde são definidas um 
+        conjunto de questões para caracterizar o objeto ou objetivo do projeto.
+    \item \textbf{Métricas (Metric):} Nível quantitativo, onde são definidos um
+        conjunto de métricas a serem analisadas para que as questões associadas
+        a elas possam ser respondidas.
+\end{itemize}
+
+Utilizando-se destas idéias foi definido um objetivo geral do trabalho, e alguns
+objetivos específicos desta primeira fase. O objetivo geral foi definido como: 
+
+\begin{center}
+    \textit{Análise da eficiência do uso de Software Analytics para a priorização 
+        de atividades em projetos de desenvolvimento ágil.}
+\end{center}
+
+Como o trabalho foi dividido em duas fases, os objetivos específicos da primeira 
+fase foram definidos como:
 
 \begin{itemize}
     \item Levantar fundamentação teórica necessária para apoiar o trabalho.
     \item Definir técnicas e ferramentas de \textit{Software Analytics} que deverão ser utilizadas.
     \item Definir e caracterizar o projeto para estudo de caso.
     \item Montar infraestrutura computacional necessária para a realização do trabalho.
-    \item Aplicar técnincas de \textit{Software Analytics} no projeto de estudo de caso e analizar resultados.
+    \item Aplicar técnincas de \textit{Software Analytics} no projeto de estudo de caso e analisar resultados.
 \end{itemize}
 
 \section{Questão de Pesquisa}
 
+Diferentemente de outros campos da ciência e engenharia que possuem paradigmas de 
+pesquisa bem desenvolvidos, a engenharia de software ainda não desenvolveu um
+método ou modelo de guia para estes tipo de estudos. Por este motivo, é
+comum ver críticas relatórios de pesquisas de software que fogem dos paradigmas
+tradicionais\cite{shaw}.Enquanto as técnicas de pesquisa em engenharia de software
+ganham maturidade, muitos pesquisadores sugerem o uso de frameworks e metodologias
+vindas de outras área de conhecimento, como a medicina\cite{guidelines}.Recentemente 
+Petticrew e Roberts sugeriram a utilização do modelo PICOC \textit{(Population,
+Intervention, Comparison, Outcome, Context)}, que é divido da seguinte forma\cite{petticrew}:
+
+\begin{itemize}
+    \item \textbf{População (Population):} A população que o experimento será 
+        aplicado, no contexto de engenharia de software pode ser: uma determinada
+        função (programadores, gerentes, usuários), categoria de engenheiro de 
+        software (Iniciante,Junior,Senior), uma área de aplicação, ou um setor 
+        da industria.
+    \item \textbf{Intervention (Intervenção):} É a metodologia, ferramenta,
+        tecnologia ou procedimento aplicado no experimento.
+    \item \textbf{Comparação (Comparison):} É a metodologia, ferramenta,
+        tecnologia ou procedimento com o qual a intervenção está sendo comparada.
+    \item \textbf{Resultado  (Outcome):} Resultados da aplicação da intervenção na
+        população.
+    \item \textbf{Contexto (Context):} Contexto onde o experimento foi realizado
+        (Academia ou Industria), os participantes que fizeram parte do experimento
+        (Alunos, Professores, Profissionais), e as tarefas que foram feitas
+        (Grande ou Baixa Escala).
+\end{itemize}
+
+A questão de pesquisa é a parte mais importante de um estudo, ela deve guiar toda
+a métodologia de pesquisa. Um estudo deve fazer perguntas que que identifiquem e 
+definam o escopo das atividades de pesquisa\cite{guidelines}.
+
 Com base no problema identificado, foi possivel derivar uma questão de pesquisa
-que deve ser respondida ao final deste trabalho. 
+que deve ser respondida ao final deste trabalho.
 
 \begin{center}
     \textit{É possivel apoiar decisões de planejamento de release com base na análise de relevância de issues?} 
 \end{center}
+
+Utilizando o modelo PICOC é possivel estruturar a questão acima da seguinte forma:
+
+\begin{itemize}
+    \item \textbf{População (Population):} Repositórios de código aberto.
+    \item \textbf{Intervention (Intervenção):} Análise de dados em ambientes de
+        \textit{Big Data} com utilização de algoritmos \textit{Page Ranking} e
+        centralidade de redes em \textit{issues} de repositórios de código.
+    \item \textbf{Comparação (Comparison):} Planejamentos de sprint sem a utilização
+        sistemática de análise de dados.
+    \item \textbf{Resultado  (Outcome):} Determinar a eficiência da utilização de
+        \textit{Software Analytics} para apoiar decisões de planejamento de release.
+    \item \textbf{Contexto (Context):} Projetos de software livre que utilizam 
+        repositorios de código distribuidos e que fazem a organização das releases
+        utilizando \textit{issues}.
+\end{itemize}
+
 
 \section{Organização do Trabalho}
 Este trabalho foi dividido em cinco capítulos, são eles:
