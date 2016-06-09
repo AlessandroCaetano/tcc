@@ -1,5 +1,111 @@
 \chapter{Introdução}
 \section{Contexto}
+O desenvolvimento de ágil surgiu como uma forma de tomar um outro
+caminho em relação ao desenvolvimento convencional software. Ao invés de planejar,
+analizar e projetar para um futuro distante, programadores XP fazem todas essas
+atividades um pouco de cada vez, durante todo o desenvolvimento\cite{XP}.
+Desta forma, quatro principios foram propostos pela comunidade ágil, tendo Kent
+Beck como seu precursor\cite{beckManifesto}:
+\begin{itemize}
+    \item Individuos e interações acima de processos e ferramentas.
+    \item Software funcionando acima de uma documentação compreensiva.
+    \item Colaboração do cliente acime de negociação de contratos.
+    \item Responder as mudanças acima de seguir um plano.
+\end{itemize}
+
+No ciclo de desenvolvimento ágil o cliente decide a próxima \textit{release}
+escolhendo as \textit{features}, também chamadas de histórias, que agregam
+maior valor dentre todas as \textit{features} possiveis, tendo em vista  o custo
+e a velocidade de implementação do time. A cada iteração, ou \textit{sprint}, o
+cliente escolhe um conjunto de  histórias que devem ser implementadas dentro das 
+histórias restantes na \textit{release}. A partir disto as histórias são quebradas em
+atividades menores que são atribuídas aos programadores, e que depois são 
+transformadas em casos de testes para provar que tarefa foi concluida\cite{XP}.
+Ao final da release, um produto de software é entregue, e o ciclo se inicia 
+novamente.
+
+O planejamento de release é a atividade mais importante realizada no começo de 
+cada novo ciclo de desenvolvimento de software no método ágil, é nele que são 
+definidas as funcionalidades que serão implementadas nos próximos meses e como 
+os recursos de projeto deverão ser alocados.Mesmo assim, apesar dos níveis de 
+interação entre pessoas em projetos de desenvolvimento ágil serem altos, 
+o planejamento de  release é uma tarefa dificil tanto computacionalmente quanto 
+cognitivamente, pois diversos tipos de incertezas tornam dificil a solução e 
+estruturação do problema a ser atacado\cite{Ngo}. Desta forma, é fundamental para 
+os times de desenvolvimento ágil que o planejamento de release possua um alto 
+nível de confiabilidade\cite{McDaid}.
+
+A disponibilidade de dados confiáveis, na frequência necessária, permite que 
+engenheiros e gerentes tomem decisões que podem ser fundamentais para permitir 
+que o processo de desenvolvimento de software tenha sucesso e que ao final seja 
+entregue um produto de qualidade\cite{codemine}. Processos de desenvolvimento
+de software adaptativos são constantemente afetados por mudanças nas condições
+de negócio, o antigo modo de operação reativo precisa ser substituido por decisões
+em tempo real e proativas baseadas em informações altamente atualizadas e
+compreensivas\cite{artAndScience}.Na Microsoft, por exemplo, vários times utilizam
+dados coletados para melhorar processos como:
+
+\begin{itemize}
+    \item Avaliação de riscos e mudança em ferramentas de análise de impacto.
+    \item Otimização da estrutura de \textit{branchs} dos repositórios de código.
+    \item Análise sócio-técnica de dados.
+    \item Busca customizada de bugs e logs.
+    \item Acompanhamento de tendências e relatórios do status de desenvolvimento.
+\end{itemize}
+
+Os métodos atuais de planejamento de release utilizam de informações, \textit{stakeholders}
+e conhecimento estáticos e predefinidos, os principais defeitos dessa abordagem 
+estão relacionados a incapacidade de lidar com a grande quantidade de dados
+relacionados as mudanças constantes que estão acontecendo. A utilização de 
+\textit{Big Data Analytics} oferece o principal caminho para auxiliar na tomada 
+de decisões proativas e rápidas para o ciclo de desenvolvimento\cite{artAndScience}.
+
+A partir do entendimento destes problemas, este estudo utiliza de ferramentas
+e técnicas de \textit{Software Analytics} e \textit{Big Data} para avaliar a
+utilização de análise de dados para a priorização de atividades em projetos de
+desenvolvimento ágil. 
+
 \section{Problema}
-\section{Metodologia de Pesquisa}
+
+Vista a relevância da fase de planejamento de sprint em um projeto ágil, 
+formulou-se o seguinte problema, que motiva o desenvolvimento desta pesquisa.
+
+\begin{center}
+  \textit{Dificuldade na tomada de decisões de priorização de features em 
+  Release Plannings}
+\end{center}
+
+\section{Objetivos}
+
+O objetivo geral deste trabalho consiste na análise da eficiência do uso de
+\textit{Software Analytics} para a priorização de atividades em projetos de
+desenvolvimento ágil. Os objetivos específicos desta primeira parte do trabalho
+são:
+
+\begin{itemize}
+    \item Levantar fundamentação teórica necessária para apoiar o trabalho.
+    \item Definir técnicas e ferramentas de \textit{Software Analytics} que deverão ser utilizadas.
+    \item Definir e caracterizar o projeto para estudo de caso.
+    \item Montar infraestrutura computacional necessária para a realização do trabalho.
+    \item Aplicar técnincas de \textit{Software Analytics} no projeto de estudo de caso e analizar resultados.
+\end{itemize}
+
+\section{Questão de Pesquisa}
+
+Com base no problema identificado, foi possivel derivar uma questão de pesquisa
+que deve ser respondida ao final deste trabalho. 
+
+\begin{center}
+    \textit{É possivel apoiar decisões de planejamento de release com base na análise de relevância de issues?} 
+\end{center}
+
 \section{Organização do Trabalho}
+Este trabalho foi dividido em cinco capítulos, são eles:
+
+\begin{itemize}
+    \item \textbf{Capítulo 1 - Introdução:} Capítulo responsável pela apresentação do contexto do trabalho, as ideias que o motivaram, as questões a serem respondidas e objetivos a serem alcançados.
+    \item \textbf{Capítulo 2 - Metodologia:} Apresenta-se a metodologia a ser utilizada, tanto de pesquisa quanto de implementação e projeto para o estudo de caso.
+    \item \textbf{Capítulo 3 - Software Analitycs:} Responsável por apresentar os conceitos de \textit{Software Analytics}, assim como os algoritmos e ferramentas utilizadas no trabalho.
+    \item \textbf{Capítulo 4 - Projeto de Estudo de Caso:} Descrição da aplicação das técnicas e ferramentas definidas em um projeto de desenvolvimento de software ágil.
+    \item \textbf{Capítulo 5 - Conclusão:} Discussão dos resultados e conclusões sobre o estudo de caso e proposta de próximos passos para a continuação do trabalho.
+\end{itemize}
