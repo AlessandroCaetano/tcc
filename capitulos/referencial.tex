@@ -4,33 +4,33 @@ Durante muito tempo, a falta de dados em projetos de software foi uma constante.
 Agora com o auxílio da internet e dos projetos de software livre, existem tantos
 dados relacionados a projetos de software que é manualmente impossível de analisá-los
 por completo\cite{artAndScience}. Ao fim de 2012, pesquisas mostraram que o \textit{Mozilla Firefox} 
-teve 800.000 bug reports e outras plataformas como \textit{Sourcefoge.net}
+teve 800.000 relatos de bugs e outras plataformas como \textit{Sourcefoge.net}
 e o \textit{Github} hospedam 324.000 e 11.2 milhões de projetos, respectivamente\cite{informationNeeds}.
 
 Para ser capaz de manipular essa grande quantidade de dados, muitos pesquisadores
 se voltaram para o uso e \textit{analytics}, ou seja, o uso de análises, dados e
 raciocínio sistemático para tomar decisões. Podemos definir \textit{Software Analytics}
 como: `A análise de dados de software para gerentes e engenheiros de software, 
-com o objetivo de capacitar individuos e times de desenvolvimento, a ganhar e difundir 
+com o objetivo de capacitar indivíduos e times de desenvolvimento, a ganhar e difundir 
 conhecimento a partir de seus dados para tomar melhores decisões'\cite{informationNeeds}.
 
 Hoje é comum empresas como Google, Facebook e Microsoft aplicarem métodos de data
 science diariamente em seus projetos. Além disto, o número de conferencias neste
 tópico aumentou bastante, sendo as duas mais importantes \textit{Mining Software
 Repositories} (MSR) e a \textit{PROMISE Conference on Repeatable Experimentes in Software
-Engineering}, cada uma com um foco diferente, sendo a MSR procupada com a coleta dos dados
+Engineering}, cada uma com um foco diferente, sendo a MSR preocupada com a coleta dos dados
 enquanto a PROMISE com a eficacia e repetibilidade da análise de dados.
 
-As metodologias ágies, acompanhando o crescimento da utilização do Data Science no
-mercado, também vem utlizando desta tecnica para otimizar a evolução de produto. Um
-dos meios de aplicar a análise de dados em um ciclo ágil é utlizar uma abordagem 
-analitica de planejamento de release, ou seja utilizar fontes externas e internas
+As metodologias ágeis, acompanhando o crescimento da utilização do Data Science no
+mercado, também vem utilizando desta técnica para otimizar a evolução de produto. Um
+dos meios de aplicar a análise de dados em um ciclo ágil é utilizar uma abordagem 
+analítica de planejamento de release, ou seja utilizar fontes externas e internas
 de dados para planejar as entregas futuras do produto de software. 
 
 A análise de dados obtidos de ferramentas de versionamento de código, como o Git,
 Bazaar, Subversion ou CVS podem trazer informações importantes a respeito da evolução
 de um projeto de software, do nível de engajamento dos desenvolvedores, número de defeitos
-e do desenvolvimento distribuido e muitos outros tópicos\cite{artAndScience}. O Github,
+e do desenvolvimento distribuído e muitos outros tópicos\cite{artAndScience}. O Github,
 uma das ferramentas mais utilizadas de versionamento de código, fornece uma api que permite
 a extração de dois tipos de dados:
 
@@ -41,12 +41,12 @@ e o escopo do commit ou issue. Além disto, na mensagem do commit podem haver re
 desenvolvedores, bugs ou outros commits e issues.
 \item \textbf{Snapshots:} O código fonte do projeto, que pode ser obtido em diferentes
 fases do desenvolvimento, já que a ferramente permite que um usuário avance ou retroceda
-dentro dos commits. Desta forma, é possivel analisar o código de um projeto referente
-a vários periodos diferentes.
+dentro dos commits. Desta forma, é possível analisar o código de um projeto referente
+a vários períodos diferentes.
 \end{itemize}
 
 Abaixo na\ref{github_api} podemos ver o digrama de classes da API fornecida pelo
-Github, com base nesta imagem, é possivel ver que as issues e informações dos commiters
+Github, com base nesta imagem, é possível ver que as issues e informações dos commiters
 são exportadas a partir de um ponto comum de acesso.
 
 \begin{figure}[h]
@@ -56,17 +56,60 @@ são exportadas a partir de um ponto comum de acesso.
     \caption{Representação UML da API do Github}
 \end{figure}
 
-Utilizando-se das informações mostradas na\ref{github_api} é possivel utlizar
+Utilizando-se das informações mostradas na figura~\ref{github_api} é possível utilizar
 \textit{Software Analytics} para possibilitar uma melhor tomada de decisão em um
 repositório que utilize da ferramenta Github para organizar o trabalho.
 
 \section{Centralidade de Redes}
 
 Centralidade é um conceito fundamental e um dos tópicos mais estudados na análise 
-de redes sociais, ele determina o grau de importancia de um vértice dentre todos
+de redes sociais, ele determina o grau de importância de um vértice dentre todos
 os outros dentro de uma rede. O conceito de centralidade de redes já foi aplicado a diversos contextos,
 dentre eles: investigar a influencia de redes interorganizacionais, estudos de relevância,
-vantagens em redes de troca, competencia em organizações formais, oportunidades de emprego 
+vantagens em redes de troca, competência em organizações formais, oportunidades de emprego 
 e diversos outros campos do mercado e ciência\cite{centrality}.
 
-\subsection{Page Ranking}
+Diversos processos comumente encontrados no dia-a-dia são processos de fluxo. Estes
+processos diferem em dimensão e tipo, mas ainda assim podem ser comparados e exemplificados.
+Alguns destes processos são: dinheiro, fofoca, e-mail, infecções, pacotes.  
+
+\begin{itemize}
+\item \textbf{Dinheiro: Considere uma moeda, ou nota de um dólar, que se move pela
+economia e muda de mãos a cada transação. Uma nota é indivisível e só pode estar
+em um lugar em um determinado período de tempo. Em uma perspectiva de teoria dos
+grafos, a movimentação de uma nota em uma rede pode ser feita como um \textit{passeio (Walk)},
+sendo, desta forma, representado como um processo de Markov}
+\item \textbf{Fofoca: Imagine uma informação privada que passa por uma rede
+de empregados de uma empresa. Diferentemente de uma nota, essa mesma informação
+pode estar em diversos locais diferentes em um determinado período de tempo, se
+replicando a cada pessoa que passa a ter acesso a informação, mas geralmente
+não atravessa o mesmo vértice mais que uma vez, apesar de poder visitar o mesmo nó
+mais de uma vez. A movimentação desta informação em grafo pode ser representada como
+uma trilha.}
+\item \textbf{E-mail: Um vírus, o spam de e-mail, que envia mensagens a todos os
+contatos de uma pessoa simultaneamente pode ser considerado um processo de fluxo.
+Um e-mail pode ser representado como uma trilha da mesma forma que é realizado 
+com uma informação, já que compartilham de características bem parecidas, como 
+existir em diversos locais ao mesmo tempo, e geralmente, os e-mails não passarem
+pelo mesmo vértice, ou caminho, duas vezes.} 
+\item \textbf{Infecções: O caso de uma infecção em que o hospedeiro ficou imune.
+A infecção vão passar por duplicação de pessoa a pessoa, mas nunca vai voltar a infectar
+aqueles que já se tornaram imunes.} 
+\item \textbf{Pacotes: Um pacote de rede, que possui a característica de possuir
+um remetente e um destinatário. Normalmente é preferível que o pacote tome o menor
+caminho possível até chegar ao seu destino, desta forma a movimentação do pacote
+deve seguir o caminho geodésico pela rede e roteadores.} 
+\end{itemize}
+
+Durante os anos, muitos métodos de medida de centralidade foram criados, entre eles:
+Centralidade de Grau, Proximidade \textit{(Closeness)}, Intermediação \textit{(Betweenness)}, 
+Autovetor \textit{(Eigen Vector)}, Informação, Intermediação de Fluxo, \textit{Rush Index},
+Medidas de Influencia de Katz, Hubbell, Hoede e Taylor. Estes métodos diferem nas suposições
+iniciais que fazem para alcançar o objetivo de determinar o nó com maior importância, por exemplo,
+o algoritmo de Freeman de proximidade e intermediação conta apenas os caminhos geodésicos entre 
+os nós, assumindo que qualquer fluxo que percorra uma rede, siga sempre pelo caminho mais curto.
+Outros algoritmos como a centralidade de autovetor de Bonacich conta travessias, o que assume
+que as trajetórias podem ser sinuosas, atravessando nós e arestas repetidas vezes até chegar ao
+destino\cite{centrality}.
+
+\section{Page Ranking}

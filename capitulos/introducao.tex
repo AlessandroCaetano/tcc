@@ -2,12 +2,12 @@
 \section{Contexto}
 O desenvolvimento de ágil surgiu como uma forma de tomar um outro
 caminho em relação ao desenvolvimento convencional software. Ao invés de planejar,
-analizar e projetar para um futuro distante, programadores XP fazem todas essas
+analisar e projetar para um futuro distante, programadores XP fazem todas essas
 atividades um pouco de cada vez, durante todo o desenvolvimento\cite{XP}.
-Desta forma, quatro principios foram propostos pela comunidade ágil, tendo Kent
+Desta forma, quatro princípios foram propostos pela comunidade ágil, tendo Kent
 Beck como seu precursor\cite{beckManifesto}:
 \begin{itemize}
-    \item Individuos e interações acima de processos e ferramentas.
+    \item Indivíduos e interações acima de processos e ferramentas.
     \item Software funcionando acima de uma documentação compreensiva.
     \item Colaboração do cliente acima de negociação de contratos.
     \item Responder as mudanças acima de seguir um plano.
@@ -15,12 +15,12 @@ Beck como seu precursor\cite{beckManifesto}:
 
 No ciclo de desenvolvimento ágil o cliente decide a próxima \textit{release}
 escolhendo as \textit{features}, também chamadas de histórias, que agregam
-maior valor dentre todas as \textit{features} possiveis, tendo em vista  o custo
+maior valor dentre todas as \textit{features} possíveis, tendo em vista  o custo
 e a velocidade de implementação do time. A cada iteração, ou \textit{sprint}, o
 cliente escolhe um conjunto de  histórias que devem ser implementadas dentro das
 histórias restantes na \textit{release}. A partir disto as histórias são quebradas em
 atividades menores que são atribuídas aos programadores, e que depois são
-transformadas em casos de testes para provar que tarefa foi concluida\cite{XP}.
+transformadas em casos de testes para provar que tarefa foi concluída\cite{XP}.
 Ao final da release, um produto de software é entregue, e o ciclo se inicia
 novamente.
 
@@ -29,8 +29,8 @@ cada novo ciclo de desenvolvimento de software no método ágil, é nele que sã
 definidas as funcionalidades que serão implementadas nos próximos meses e como
 os recursos de projeto deverão ser alocados.Mesmo assim, apesar dos níveis de
 interação entre pessoas em projetos de desenvolvimento ágil serem altos,
-o planejamento de  release é uma tarefa dificil tanto computacionalmente quanto
-cognitivamente, pois diversos tipos de incertezas tornam dificil a definição e
+o planejamento de  release é uma tarefa difícil tanto computacionalmente quanto
+cognitivamente, pois diversos tipos de incertezas tornam difícil a definição e
 estruturação do problema a ser atacado\cite{Ngo}. Desta forma, é fundamental para
 os times de desenvolvimento ágil que o planejamento de release possua um alto
 nível de confiabilidade\cite{McDaid}.
@@ -40,7 +40,7 @@ engenheiros e gerentes tomem decisões que podem ser fundamentais para permitir
 que o processo de desenvolvimento de software tenha sucesso e que ao final seja
 entregue um produto de qualidade\cite{codemine}. Processos de desenvolvimento
 de software adaptativos são constantemente afetados por mudanças nas condições
-de negócio, o antigo modo de operação reativo precisa ser substituido por decisões
+de negócio, o antigo modo de operação reativo precisa ser substituído por decisões
 em tempo real e proativas baseadas em informações altamente atualizadas e
 compreensivas\cite{artAndScience}.Na Microsoft, por exemplo, vários times utilizam
 dados coletados para melhorar processos como:
@@ -92,7 +92,7 @@ de um projeto. O GQM propõe uma estrutura em três níveis\cite{gqm}:
         a elas possam ser respondidas.
 \end{itemize}
 
-Utilizando-se destas idéias foi definido um objetivo geral do trabalho, e alguns
+Utilizando-se destas ideias foi definido um objetivo geral do trabalho, e alguns
 objetivos específicos desta primeira fase. O objetivo geral foi definido como:
 
 \begin{center}
@@ -108,7 +108,7 @@ fase foram definidos como:
     \item Definir técnicas e ferramentas de \textit{Software Analytics} que deverão ser utilizadas.
     \item Definir e caracterizar o projeto para estudo de caso.
     \item Montar infraestrutura computacional necessária para a realização do trabalho.
-    \item Aplicar técnincas de \textit{Software Analytics} no projeto de estudo de caso e analisar resultados.
+    \item Aplicar técnicas de \textit{Software Analytics} no projeto de estudo de caso e analisar resultados.
 \end{itemize}
 
 \section{Questão de Pesquisa}
@@ -117,59 +117,19 @@ Diferentemente de outros campos da ciência e engenharia que possuem paradigmas 
 pesquisa bem desenvolvidos, a engenharia de software ainda não desenvolveu um
 método ou modelo de guia para estes tipos de estudos. Por este motivo, é
 comum ver críticas relatórios de pesquisas de software que fogem dos paradigmas
-tradicionais\cite{shaw}.Enquanto as técnicas de pesquisa em engenharia de software
-ganham maturidade, muitos pesquisadores sugerem o uso de frameworks e metodologias
-vindas de outras área de conhecimento, como a medicina\cite{guidelines}.Recentemente
-Petticrew e Roberts sugeriram a utilização do modelo PICOC \textit{(Population,
-Intervention, Comparison, Outcome, Context)}, que é divido da seguinte forma\cite{petticrew}:
-
-\begin{itemize}
-    \item \textbf{População (Population):} A população que o experimento será
-        aplicado, no contexto de engenharia de software pode ser: uma determinada
-        função (Desenvolvedores, Gerentes, Usuários), categoria de engenheiro de
-        software (Iniciante,Junior,Senior), uma área de aplicação, ou um setor
-        da industria.
-    \item \textbf{Intervention (Intervenção):} É a metodologia, ferramenta,
-        tecnologia ou procedimento aplicado no experimento.
-    \item \textbf{Comparação (Comparison):} É a metodologia, ferramenta,
-        tecnologia ou procedimento com o qual a intervenção está sendo comparada.
-    \item \textbf{Resultado  (Outcome):} Resultados da aplicação da intervenção na
-        população.
-    \item \textbf{Contexto (Context):} Contexto onde o experimento foi realizado
-        (Academia ou Industria), os participantes que fizeram parte do experimento
-        (Alunos, Professores, Profissionais), e as tarefas que foram feitas
-        (Grande ou Baixa Escala).
-\end{itemize}
-
-A questão de pesquisa é a parte mais importante de um estudo, ela deve guiar toda
-a métodologia de pesquisa. Um estudo deve fazer perguntas que que identifiquem e
+tradicionais\cite{shaw}.A questão de pesquisa é a parte mais importante de um estudo, ela deve guiar toda
+a metodologia de pesquisa. Um estudo deve fazer perguntas que que identifiquem e
 definam o escopo das atividades de pesquisa\cite{guidelines}.
 
-Com base no problema identificado, foi possivel derivar uma questão de pesquisa
+Com base no problema identificado, foi possível derivar uma questão de pesquisa
 que deve ser respondida ao final deste trabalho.
 
 \begin{center}
-    \textit{Em repositórios de código aberto, é possivel utilizar Software Analytics
-            com algoritmos de Page Ranking e centralidade de redes, para ajudar nas 
-            decisões de release planning em projetos de desenvolvimento
-            ágil?}
+    \textit{É possível utilizar a relevância das issues de um projeto para ajudar
+    na priorização de tarefes de uma sprint?}
 \end{center}
 
-Utilizando o modelo PICOC é possivel estruturar a questão acima da seguinte forma:
-
-\begin{itemize}
-    \item \textbf{População (Population):} Repositórios de código aberto.
-    \item \textbf{Intervention (Intervenção):} Análise de dados em ambientes de
-        \textit{Big Data} com utilização de algoritmos \textit{Page Ranking} e
-        centralidade de redes em \textit{issues} de repositórios de código.
-    \item \textbf{Comparação (Comparison):} Planejamentos de release sem a utilização
-        sistemática de análise de dados.
-    \item \textbf{Resultado  (Outcome):} Determinar a eficiência da utilização de
-        \textit{Software Analytics} para apoiar decisões de planejamento de release.
-    \item \textbf{Contexto (Context):} Projetos de software livre que utilizam
-        repositorios de código distribuidos e que fazem a organização das releases
-        utilizando \textit{issues}.
-\end{itemize}
+\subsection{Questões Secundárias}
 
 
 \section{Organização do Trabalho}
