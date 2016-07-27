@@ -45,60 +45,69 @@ dentro dos commits. Desta forma, é possível analisar o código de um projeto r
 a vários períodos diferentes.
 \end{itemize}
 
-Abaixo na\ref{github_api} podemos ver o digrama de classes da API fornecida pelo
+Abaixo, na figura~\ref{fig:github_api}, podemos ver o digrama de classes da API fornecida pelo
 Github, com base nesta imagem, é possível ver que as issues e informações dos commiters
 são exportadas a partir de um ponto comum de acesso.
 
 \begin{figure}[h]
     \centering
-    \label{github_api}
+    \label{fig:github_api}
         \includegraphics[keepaspectratio=true,scale=0.3]{figuras/github_api_diagram.eps}
     \caption{Representação UML da API do Github}
 \end{figure}
 
-Utilizando-se das informações mostradas na figura~\ref{github_api} é possível utilizar
+Utilizando-se das informações mostradas na figura~\ref{fig:github_api} é possível utilizar
 \textit{Software Analytics} para possibilitar uma melhor tomada de decisão em um
 repositório que utilize da ferramenta Github para organizar o trabalho.
 
 \section{Centralidade de Redes}
 
-Centralidade é um conceito fundamental e um dos tópicos mais estudados na análise 
-de redes sociais, ele determina o grau de importância de um vértice dentre todos
-os outros dentro de uma rede. O conceito de centralidade de redes já foi aplicado a diversos contextos,
-dentre eles: investigar a influencia de redes interorganizacionais, estudos de relevância,
-vantagens em redes de troca, competência em organizações formais, oportunidades de emprego 
-e diversos outros campos do mercado e ciência\cite{centrality}.
+Centralidade é um dos tópicos mais estudados na análise de redes sociais, ele 
+determina o grau de importância de um vértice dentre todos os outros dentro de uma 
+rede, a figura~\ref{fig:centrality} apresenta um exemplo de centralidade. 
+O conceito de centralidade de redes já foi aplicado a diversos contextos, dentre eles: investigar a influencia 
+de redes interorganizacionais, estudos de relevância, vantagens em redes de troca, 
+competência em organizações formais, oportunidades de emprego e diversos outros campos 
+do mercado e ciência\cite{centrality}.
+
+\begin{figure}[h]
+    \centering
+    \label{fig:centrality}
+        \includegraphics[keepaspectratio=true,scale=0.5]{figuras/centrality.eps}
+    \caption{Exemplificação de Relevância de um Nó em uma Rede}
+\end{figure}
 
 Diversos processos comumente encontrados no dia-a-dia são processos de fluxo. Estes
 processos diferem em dimensão e tipo, mas ainda assim podem ser comparados e exemplificados.
-Alguns destes processos são: dinheiro, fofoca, e-mail, infecções, pacotes.  
+Abaixo é possivel ver alguns desses processos e como eles podem ser descritos em uma perspectiva
+da Teoria dos Grafos\cite{ceflow}.  
 
 \begin{itemize}
-\item \textbf{Dinheiro: Considere uma moeda, ou nota de um dólar, que se move pela
+\item Dinheiro: Considere uma moeda, ou nota de um dólar, que se move pela
 economia e muda de mãos a cada transação. Uma nota é indivisível e só pode estar
 em um lugar em um determinado período de tempo. Em uma perspectiva de teoria dos
 grafos, a movimentação de uma nota em uma rede pode ser feita como um \textit{passeio (Walk)},
-sendo, desta forma, representado como um processo de Markov}
-\item \textbf{Fofoca: Imagine uma informação privada que passa por uma rede
+sendo, desta forma, representado como um processo de Markov
+\item Fofoca: Imagine uma informação privada que passa por uma rede
 de empregados de uma empresa. Diferentemente de uma nota, essa mesma informação
 pode estar em diversos locais diferentes em um determinado período de tempo, se
 replicando a cada pessoa que passa a ter acesso a informação, mas geralmente
 não atravessa o mesmo vértice mais que uma vez, apesar de poder visitar o mesmo nó
 mais de uma vez. A movimentação desta informação em grafo pode ser representada como
-uma trilha.}
-\item \textbf{E-mail: Um vírus, o spam de e-mail, que envia mensagens a todos os
+uma trilha.
+\item E-mail: Um vírus, o spam de e-mail, que envia mensagens a todos os
 contatos de uma pessoa simultaneamente pode ser considerado um processo de fluxo.
 Um e-mail pode ser representado como uma trilha da mesma forma que é realizado 
 com uma informação, já que compartilham de características bem parecidas, como 
 existir em diversos locais ao mesmo tempo, e geralmente, os e-mails não passarem
-pelo mesmo vértice, ou caminho, duas vezes.} 
-\item \textbf{Infecções: O caso de uma infecção em que o hospedeiro ficou imune.
+pelo mesmo vértice, ou caminho, duas vezes.
+\item Infecções: O caso de uma infecção em que o hospedeiro ficou imune.
 A infecção vão passar por duplicação de pessoa a pessoa, mas nunca vai voltar a infectar
-aqueles que já se tornaram imunes.} 
-\item \textbf{Pacotes: Um pacote de rede, que possui a característica de possuir
+aqueles que já se tornaram imunes.
+\item Pacotes: Um pacote de rede, que possui a característica de possuir
 um remetente e um destinatário. Normalmente é preferível que o pacote tome o menor
 caminho possível até chegar ao seu destino, desta forma a movimentação do pacote
-deve seguir o caminho geodésico pela rede e roteadores.} 
+deve seguir o caminho geodésico pela rede e roteadores. 
 \end{itemize}
 
 Durante os anos, muitos métodos de medida de centralidade foram criados, entre eles:
@@ -112,4 +121,63 @@ Outros algoritmos como a centralidade de autovetor de Bonacich conta travessias,
 que as trajetórias podem ser sinuosas, atravessando nós e arestas repetidas vezes até chegar ao
 destino\cite{centrality}.
 
-\section{Page Ranking}
+\section{Ranqueamento de Paginas}
+O algoritmo de ranqueamento de páginas foi inventado por Larry Page e Sergey em
+1996, ele permite calcular a importância relativa de páginas da web e tem aplicações
+em mecanismos de busca, estimativas de trafego e navegação na web. Ele foi criado
+com o intuito de prover uma solução de busca de informações na web e aproveitar
+a estrutura de de links, usada no hipertexto da web, possui\cite{pageRank}.
+
+A premissa do algoritmo de ranqueamento de páginas é que cada página na web
+possui um número de links de saída e de entrada, e que páginas com um grande
+número de links são mais importantes do que as com poucos links. Além disto,
+o algoritmo também leva em consideração a relevância dos links de entrada
+de uma página, ou seja, se uma página da web possui um link de entrada que
+possui uma alta relevância, essa página tende a ser mais importante que outra
+que possua vários links mas que vieram de lugares mais obscuros. A imagem~\ref{fig:page_rank}
+exemplifica como a relevância de uma página influencia as páginas seguintes.
+
+\begin{figure}[h]
+    \centering
+    \label{fig:page_rank}
+        \includegraphics[keepaspectratio=true,scale=0.5]{figuras/page_rank.eps}
+    \caption{Simplificação do Cálculo de Ranqueamento de Páginas}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+\label{fig:page_rank2}
+        \includegraphics[keepaspectratio=true,scale=0.5]{figuras/page_rank2.eps}
+    \caption{Simplificação do Cálculo de Ranqueamento de Páginas}
+\end{figure}
+
+A figura~\ref{fig:page_rank} mostra como o ranqueamento de páginas se divide através
+das paginas e como ele contribui para o ranque das páginas seguintes. Já a 
+figura~\ref{fig:page_rank2} mostra como um estado estável pode ser alcançado
+depois que o algoritmo é executado em um conjunto de páginas. 
+
+\begin{figure}[h]
+    \centering
+\label{fig:page_rank3}
+        \includegraphics[keepaspectratio=true,scale=0.5]{figuras/page_rank3.eps}
+    \caption{Loop de Ranqueamento}
+\end{figure}
+
+Um dos problemas dessa função de ranqueamento, é que caso duas páginas da web que apontem uma para
+outra, e uma terceira aponte para qualquer uma destas, o loop vai acumular ranque
+porém nunca vai distribuir isso para nenhuma outra página seguinte, é possível
+ver esse fenômeno na figura~\ref{fig:page_rank3}.
+
+Desta forma, a função de ranqueamento de páginas foi definida na seguinte forma:
+
+Seja $x$ uma página da web. Então
+\begin{itemize}
+    \item $L(x)$ é o conjunto de websites que possuem link para $x$
+    \item $C(y)$ é o grau de entrada de $y$
+    \item $\alpha$ é a probabilidade de um pulo aleatório
+    \item $N$ é o número total de websites
+\end{itemize}
+\[\displaystyle PR(x) := \alpha \left ( \frac{1}{N} \right ) + (1-\alpha) \sum_{y\in L(x)} \frac{PR(y)}{C(y)}\]
+
+Aplicando a equação acima, é possível obter o ranque de uma página, dado um conjunto
+de web-sites avaliados.
