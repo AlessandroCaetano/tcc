@@ -1,6 +1,7 @@
 \chapter{Metodologia}
+\label{met}
 \section{Metodologia de Pesquisa}
-\section{Metodologia de Busca}
+\label{met:pes}
 Enquanto as técnicas de pesquisa em engenharia de software
 ganham maturidade, muitos pesquisadores sugerem o uso de frameworks e metodologias
 vindas de outras área de conhecimento, como a medicina\cite{guidelines}.Recentemente
@@ -25,7 +26,8 @@ Intervention, Comparison, Outcome, Context)}, que é divido da seguinte forma\ci
         (Grande ou Baixa Escala).
 \end{itemize}
 
-Utilizando o modelo PICOC é possível estruturar a questão acima da seguinte forma:
+Utilizando o modelo PICOC é possível estruturar os termos relativos a esta pesquisa
+da seguinte forma:
 
 \begin{itemize}
     \item \textbf{População (Population):} Repositórios de código aberto.
@@ -41,4 +43,97 @@ Utilizando o modelo PICOC é possível estruturar a questão acima da seguinte f
         utilizando \textit{issues}.
 \end{itemize}
 
+
+A partir da estrutura apresentada acima, que utiliza o método PICOC, podemos agrupar
+os termos relevantes a esta pesquisa em uma \textit{string} onde os termos da mesma
+família são agrupados utilizando o operador \textbf{AND} e as familias são agrupadas
+com o operador \textbf{OR}. Desta forma, foi possivel estruturar uma \textit{string} 
+de busca que permitisse abranger uma maior quantidade de \textit{papers} relevantes 
+para esta pesquisa. Esta string foi definida como:
+
+\begin{center}
+    \textit{(GIT AND GITHUB AND GITLAB AND REPO AND REPOSITORIES AND FREE
+    SOFTWARE AND SOFTWARE) OR (DATA ANALYTICS AND SOFTWARE ANALYTICS AND BIG DATA
+    AND DATA MINING AND PAGE RANKING AND CENTRALITY AND GRAPH THEORY AND GRAPH AND
+    FLOW NETWORKS AND NETWORK) OR (RELEASE AND RELEASE PLANNING AND PLANNING AND
+    AGILE METHODS AND WIKI AND ISSUE AND AGILE AND PRIORITIZE) OR (EFFICIENCY AND 
+    APPROACH AND THEORETICAL AND RESULT)}
+\end{center}
+
+Esta \textit{string} foi aplicada a base Scopus e todos os \textit{papers} 
+utilizados como base para este trabalho foram retirados do conjunto de resultados
+retornados.
+
+\section{Tecnologias Utilizadas}
+\label{met:tec}
+Para a realização deste trabalho, foram escolhidas as ferramentas e serviços
+que serão utilizadas para a gerencia de atividades, repositórios de código e
+texto e desenvolvimento. As escolhas foram feitas com base na experiência de uso
+destas ferramentas.
+
+\subsection{Git}
+\label{met:tec:git}
+Git é uma ferramenta de controle de versão gratuita e de código aberto criada
+por Linus Torvalds em 2005~\cite{chacon}. Neste trabalho o Git foi utilizado 
+para controle de versão dos códigos utilizados na implementação do trabalho
+e deste texto.
+
+\subsection{Github}
+\label{met:tec:github}
+O Github é um serviço que provê a utilização do Git em uma plataforma Web. Ele 
+disponibiliza repositórios remotos para armazenamento de código, wikis e serviços
+de \textit{tracking} de issues~\cite{github}. Além disto, o Github ainda possui uma API para
+que permite alterar e consultar repositórios utilizando requisições HTTP.
+
+\subsection{Gitlab}
+\label{met:tec:gitlab}
+O Gitlab, assim como o Github, é um serviço que provê a utilização do Git como
+uma plataforma Web. Ele também possui repositórios remotos para armazenamento
+de código, wikis, serviços de \textit{tracking de issues}. Porém diferentemente
+do Github, o Gitlab é um software livre licenciado sob a licença MIT~\cite{gitlab}.
+
+\subsection{Python}
+\label{met:tec:python}
+Python é uma linguagem de programação dinâmica, interpretada, de alto nível e de 
+uso geral criada por Guido Van Rossum. Esta linguagem possui estruturas de dados
+de alto nível, é dinamicamente tipada e é muito atrativa para o desenvolvimento rápido
+de aplicações e scripts~\cite{python}. Neste trabalho, a linguagem Python foi utilizada para a criação
+de scripts e a execução do algoritmo de ranqueamento de páginas.
+
 \section{Estudo de Caso}
+\label{met:est}
+A estratégia de pesquisa escolhida para que fosse aplicada neste trabalho foi o
+estudo de caso. Um estudo de caso é uma investigação empírica que investiga um 
+fenômeno contemporâneo dentro de seu contexto da vida real, especialmente quando 
+os limites entre o fenômeno e o contexto não estão claramente definidos. Um dos 
+grandes motivos para a escolha desta técnica é que ela não requer controle sobre
+os eventos por parte do pesquisador~\cite{yin}.
+
+O primeiro componente importante para a elaboração de um estudo de caso é a definição
+de uma questão de pesquisa, o que foi feito na sessão~\ref{int:que}. O segundo
+componente necessário é uma proposição de estudo que deve ser feita com base na questão 
+de pesquisa para que seja possível responde-la, no caso deste trabalho é como a utilização de \textit{Software 
+Analytics} pode ajudar nas tomadas de decisões de priorização em \textit{Release Plannings}.
+O terceiro ponto do estudo de caso é a unidade de análise, ou seja a definição de 'caso',
+que, para este trabalho, é um repositório de código que possua uma estrutura organizacional
+dentro da Wiki e das \textit{issues} do próprio repositório~\cite{yin}.
+
+Os próximos componentes do estudo de caso estão relacionados a como os dados das
+proposições estão unidos e quais são critérios de interpretação das descobertas.
+Neste estudo, são relacionados dados da Wiki, dos \textit{milestones}, das \textit{issues} 
+e dos comentários dos repositórios de código com a relevância das \textit{issues}, para isto
+é utilizado como parâmetro o ranque das \textit{issues} para determinar quais delas 
+são mais importantes dentro do espaço amostral.
+
+Desta forma, podemos definir os componentes do estudo de caso como os seguintes:
+
+\begin{itemize}
+    \item \textbf{Questão de Pesquisa:} Questão que baseia o estudo, definida em~\ref{int:que}.
+    \item \textbf{Proposições:} Como a utilização de \textit{Software Analytics} pode ajudar nas
+    nas tomadas de decisões de priorização de \textit{Release Planning}.
+    \item \textbf{Unidade de Análise:} Neste trabalho, um caso é definido como um repositório
+        de código cuja organização é feita dentro do repositório nas Wikis, \textit{milestones}
+        e \textit{issues}.
+\end{itemize}
+
+

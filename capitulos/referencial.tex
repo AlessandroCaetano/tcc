@@ -1,5 +1,7 @@
 \chapter{Referencial Teórico}
+\label{ref}
 \section{Software Analytics}
+\label{ref:sof}
 Durante muito tempo, a falta de dados em projetos de software foi uma constante.
 Agora com o auxílio da internet e dos projetos de software livre, existem tantos
 dados relacionados a projetos de software que é manualmente impossível de analisá-los
@@ -51,9 +53,9 @@ são exportadas a partir de um ponto comum de acesso.
 
 \begin{figure}[h]
     \centering
-    \label{fig:github_api}
         \includegraphics[keepaspectratio=true,scale=0.3]{figuras/github_api_diagram.eps}
     \caption{Representação UML da API do Github}
+    \label{fig:github_api}
 \end{figure}
 
 Utilizando-se das informações mostradas na figura~\ref{fig:github_api} é possível utilizar
@@ -61,7 +63,7 @@ Utilizando-se das informações mostradas na figura~\ref{fig:github_api} é poss
 repositório que utilize da ferramenta Github para organizar o trabalho.
 
 \section{Centralidade de Redes}
-
+\label{ref:cen}
 Centralidade é um dos tópicos mais estudados na análise de redes sociais, ele 
 determina o grau de importância de um vértice dentre todos os outros dentro de uma 
 rede, a figura~\ref{fig:centrality} apresenta um exemplo de centralidade. 
@@ -72,9 +74,9 @@ do mercado e ciência\cite{centrality}.
 
 \begin{figure}[h]
     \centering
-    \label{fig:centrality}
         \includegraphics[keepaspectratio=true,scale=0.5]{figuras/centrality.eps}
     \caption{Exemplificação de Relevância de um Nó em uma Rede}
+    \label{fig:centrality}
 \end{figure}
 
 Diversos processos comumente encontrados no dia-a-dia são processos de fluxo. Estes
@@ -122,6 +124,7 @@ que as trajetórias podem ser sinuosas, atravessando nós e arestas repetidas ve
 destino\cite{centrality}.
 
 \section{Ranqueamento de Paginas}
+\label{ref:ran}
 O algoritmo de ranqueamento de páginas foi inventado por Larry Page e Sergey em
 1996, ele permite calcular a importância relativa de páginas da web e tem aplicações
 em mecanismos de busca, estimativas de trafego e navegação na web. Ele foi criado
@@ -139,16 +142,16 @@ exemplifica como a relevância de uma página influencia as páginas seguintes.
 
 \begin{figure}[h]
     \centering
-    \label{fig:page_rank}
         \includegraphics[keepaspectratio=true,scale=0.5]{figuras/page_rank.eps}
     \caption{Simplificação do Cálculo de Ranqueamento de Páginas}
+    \label{fig:page_rank}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-\label{fig:page_rank2}
         \includegraphics[keepaspectratio=true,scale=0.5]{figuras/page_rank2.eps}
     \caption{Simplificação do Cálculo de Ranqueamento de Páginas}
+    \label{fig:page_rank2}
 \end{figure}
 
 A figura~\ref{fig:page_rank} mostra como o ranqueamento de páginas se divide através
@@ -158,9 +161,9 @@ depois que o algoritmo é executado em um conjunto de páginas.
 
 \begin{figure}[h]
     \centering
-\label{fig:page_rank3}
         \includegraphics[keepaspectratio=true,scale=0.5]{figuras/page_rank3.eps}
     \caption{Loop de Ranqueamento}
+    \label{fig:page_rank3}
 \end{figure}
 
 Um dos problemas dessa função de ranqueamento, é que caso duas páginas da web que apontem uma para
