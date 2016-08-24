@@ -72,11 +72,140 @@ abaixo apresenta esses eventos e suas respectivas descrições.
 \subsection{Organização do Trabalho}
 \label{est:sof:org}
 
+O Software Público Brasileiro utiliza o Scrum juntamente com o XP e metodologias
+ágeis para o seu desenvolvimento. Sendo assim, o projeto é dividido em dois níveis,
+o nível operacional e um nível estratégico. Dentro do nível estratégico são definidas
+as metas estratégicas de cada \textit{release}, o período de duração, e as épicas
+de negocio. A medida que desce-se o nível a partir das metas estratégicas e nos
+aproximamos do nível operacional, o grau de granularidade aumenta até chegar a
+micro atividades. Podemos ver essa divisão ocorrendo nas figuras~\ref{fig:epics-diagram} 
+e~\ref{fig:epics-wiki} abaixo, que mostram como essa quebra é feita e como isso acontece 
+na Wiki do projeto.
+
+\newpage
+\begin{figure}[h]
+    \centering
+        \includegraphics[keepaspectratio=true,scale=0.3]{figuras/epics-diagram.eps}
+    \caption{Diagrama de Metas Estratégicas e Épicas de Negócio no SPB}
+    \label{fig:epics-diagram}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+        \includegraphics[keepaspectratio=true,scale=0.5]{figuras/wiki.eps}
+    \caption{Wiki do SPB com as Métas de Estratégicas e Épicas de Negócio}
+    \label{fig:epics-wiki}
+\end{figure}
+
+Já dentro do nível operacional existem as histórias de usuário e as atividades.
+Dentro do SPB, as histórias de usuário são tratadas como \textit{milestones} 
+e as atividades como \textit{issues} do Gitlab. Dentro de uma \textit{sprint}
+cada time escolhe uma ou mais  histórias, do backlog da release, e realiza a divisão
+de suas atividades entre seus membros. A utilização da ferramenta Gitlab permite
+que as atividades possam ser comentadas e acompanhadas pelos usuários, facilitando,
+desta forma, o acompanhamento do projeto tanto por parte do Ministério do Planejamento
+Orçamento e Gestão e dos desenvolvedores. As imagens~\ref{fig:milestone} e~\ref{fig:issue}
+abaixo mostram a estrutura de uma história e de uma atividade.
+
+\newpage
+\begin{figure}[h]
+    \centering
+        \includegraphics[keepaspectratio=true,scale=0.5]{figuras/milestone.eps}
+    \caption{Estrutura de um Milestone no SPB}
+    \label{fig:milestone}
+\end{figure}
+
+
+\begin{figure}[h]
+    \centering
+        \includegraphics[keepaspectratio=true,scale=0.5]{figuras/issue.eps}
+    \caption{Estrutura de uma Issue no SPB}
+    \label{fig:issue}
+\end{figure}
+
+A escolha do SPB como um caso piloto foi estratégica, visto que é um projeto de 
+domínio público e utilizando o Gitlab, é possível exportar informações de
+desenvolvedores, atividades, histórias e épicas, além disto é possível extrair
+informações especificas relacionadas ao código fonte do projeto. Sem este tipo
+de acesso a informação seria praticamente impossível a execução deste experimento.
+Outro fator determinante é a forma com o que o SPB concentra o planejamento de release
+dentro da repositório, o permite com que a relação entre as atividades seja evidenciada
+mais facilmente.
+
 \section{Ranqueamento de Páginas no SPB}
 \label{est:ran}
 
-\subsection{Nós e Links}
-\label{est:ran:nos}
+Essa sessão apresenta como o algoritmo de ranqueamento de páginas foi aplicado
+ao Software Público Brasileiro de forma a extrair a relevância das \textit{issues}.
+Como foi dita na sessão~\ref{est:sof:org}, a escolha deste projeto para o estudo de caso
+foi estratégica de forma a facilitar a execução deste experimento, já que o SPB possui 
+estrutura e condições favoráveis a isso.
+
+\subsection{Vértices e Arestas}
+\label{est:ran:ver}
+
+Como foi visto na sessão~\ref{ref:ran} a utilização do algoritmo de ranqueamento
+de páginas depende que inicialmente exista um grafo direcionado. Um grafo direcionado, 
+ou dígrafo, $D$ consiste de um conjunto finito de elementos não vazios $V(D)$
+chamados de vértices e um conjunto finito $A(D)$ de pares ordenados de vértices
+distintos chamados arcos. Desta forma, $V(D)$ é chamado de conjunto de vértices e
+$A(D)$ o conjunto de arcos de $D$~\cite{bang}.
+
+Para que um grafo do SPB fosse gerado, foi utilizada a API do Gitlab juntamente
+com um \textit{script Python} para que todas as \textit{issues}, \textit{milestones} e
+comentários fosse exportado em formato JSON. Como foi dito, o algoritmo de
+ranqueamento de páginas precisa de um dígrafo para ser executado, uma das adaptações
+deste \textit{script} é que em alguns casos os grafos gerados não eram direcionados,
+e por isto, estes grafos tiveram que ser convertidos em grafos direcionados substituindo
+cada um dos arcos ou arestas por um arco de entrada e um de saída, este processo pode
+ser visto nas figuras~\ref{fig:undirected} e~\ref{fig:directed}.
+
+\begin{figure}[h]
+    \centering
+        \includegraphics[keepaspectratio=true,scale=0.5]{figuras/undirected.eps}
+    \caption{Issues antes da conversão dos arcos}
+    \label{fig:undirected}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+        \includegraphics[keepaspectratio=true,scale=0.5]{figuras/directed.eps}
+    \caption{Issues depois da conversão dos arcos}
+    \label{fig:directed}
+\end{figure}
+
+\newpage
+\subsubsection{Issues}
+\label{est:ran:ver}
+
+Como o foco do estudo é analisar a relevância das \textit{issues}, o dígrafo 
+foi gerado com base nelas. Dentro do grafo, cada \textit{issue} foi tratada
+como um vértice, e as arestas eram formadas a medida que uma \textit{issue}
+era marcada, através de comentários ou eventos, dentro de outra. A figura
+~\ref{fig:issue-comment} exemplifica esse processo.
+
+\begin{figure}[h]
+    \centering
+        \includegraphics[keepaspectratio=true,scale=0.5]{figuras/issue-comment.eps}
+    \caption{Exemplo de comentário com marcação de issue}
+    \label{fig:issue-comment}
+\end{figure}
+
+Para a realização deste processo foram analisados os comentários de todas as 879
+\textit{issues} no repositório do SPB. O dígrafo gerado por esse processo, foi
+então utilizado para a aplicação do algoritmo de ranqueamento de páginas, a figura
+~\ref{fig:issue-graph} demonstra como esse grafo se apresenta.
+
+\begin{figure}[h]
+    \centering
+        \includegraphics[keepaspectratio=true,scale=0.5]{figuras/issue-graph.eps}
+    \caption{Demonstração de grafo das issues}
+    \label{fig:issue-graph}
+\end{figure}
+
+
+\subsubsection{Milestones}
+\label{est:ran:ver}
 
 \subsection{Visão Geral}
 \label{est:ran:vis}

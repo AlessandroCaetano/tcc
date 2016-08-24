@@ -1,0 +1,7 @@
+digraph G {
+    Issue1 -> Issue2
+    Issue2 -> Issue3
+    Issue1 -> Issue4
+    Issue4 -> Issue5
+    Issue5 -> Issue1
+}
