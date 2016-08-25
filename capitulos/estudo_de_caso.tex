@@ -207,6 +207,22 @@ então utilizado para a aplicação do algoritmo de ranqueamento de páginas, a 
 \subsubsection{Milestones}
 \label{est:ran:ver}
 
+Dentro do projeto SPB, um \textit{milestone} é uma história com um conjunto de 
+\textit{issues} associadas. Para que fosse possível uma maior aproximação com
+o ranqueamento de páginas considerou-se que todas as \textit{issues} dentro de
+um \textit{milestones} estão interligadas, de forma que elas formem um grafo completo,
+essa abstração pode ser vista na figura~\ref{fig:milestone-graph}.
+Um grafo $G$ é considerado como completo se cada par de vértices distintos em $G$
+são adjacentes~\cite{bang}.
+
+\newpage
+\begin{figure}[h]
+    \centering
+        \includegraphics[keepaspectratio=true,scale=0.5]{figuras/milestone-graph.eps}
+    \caption{Demonstração de grafo das issues em um mesmo  milestones}
+    \label{fig:milestone-graph}
+\end{figure}
+
 \subsection{Visão Geral}
 \label{est:ran:vis}
 
