@@ -2,8 +2,9 @@
 \label{int}
 \section{Contexto}
 \label{int:con}
-Os métodos de desenvolvimento ágeis surgiram como uma alternativa aos métodos de desenvolvimento chamados de tradicionais. Ao invés de planejar, analisar e projetar para um futuro em médio e longo prazo, a proposta dos métodos ágeis é que essas atividades, por exemplo, sejam realizadas continuamente em ciclos de produção \footnote{Neste trabalho os termos ciclo de produção, iteração e sprint são utilizados como sinômino} curtos, de 2 a 4 semanas, durante todo o ciclo de vida do projeto.
-Para representar essa nova forma de olhar para o desenvolvimento de software, quatro valores foram propostos e enfatizados por um grupo de experientes desenvolvedores que se tornaram signatários do conhecido manifesto ágil \cite{beckManifesto}:
+
+Os métodos de desenvolvimento ágeis surgiram como uma alternativa aos métodos de desenvolvimento chamados de tradicionais. Ao invés de planejar, analisar e projetar para um futuro em médio e longo prazo, a proposta dos métodos ágeis é que essas atividades, por exemplo, sejam realizadas continuamente em ciclos de produção\footnote{Neste trabalho os termos ciclo de produção, iteração e \textit{sprint} são utilizados como sinômino} curtos, de 2 a 4 semanas, durante todo o ciclo de vida do projeto.
+Para representar essa nova forma de olhar para o desenvolvimento de software, quatro valores foram propostos e enfatizados por um grupo de experientes desenvolvedores que se tornaram signatários do conhecido manifesto ágil~\cite{beckManifesto}:
 \begin{itemize}
     \item \textbf{Indivíduos e interação} entre eles mais que processos e ferramentas.
     \item \textbf{Software em funcionamento} mais que documentação abrangente.
@@ -11,14 +12,13 @@ Para representar essa nova forma de olhar para o desenvolvimento de software, qu
     \item \textbf{Responder a mudanças} mais que seguir um plano.
 \end{itemize}
 
-No ciclo de desenvolvimento ágil o cliente direciona as \textit{releases} ao priorizar os requisitos, representados pelas histórias de usuário, que possuem maior valor para o negócio. A cada iteração, o cliente escolhe um conjunto de  histórias que devem ser implementadas, respeitando a capacidade produtiva do time. A partir disso, são identificadas as atividades necessárias para que uma determinada história seja desenvolvida e estas são atribuídas aos programadores. São atividades de diferentes áreas da engenharia de software, como por exemplo: projetar, codificar, testar, medir, implantar, gerenciar configurações do software. Ao final da release, uma versão de produto de software é entregue ao cliente e o ciclo se inicia novamente.
+No ciclo de desenvolvimento ágil o cliente direciona as \textit{releases} ao priorizar os requisitos, representados pelas histórias de usuário, que possuem maior valor para o negócio. A cada iteração, o cliente escolhe um conjunto de  histórias que devem ser implementadas, respeitando a capacidade produtiva do time. A partir disso, são identificadas as atividades necessárias para que uma determinada história seja desenvolvida e estas são atribuídas aos programadores. São atividades de diferentes áreas da engenharia de software, como por exemplo: projetar, codificar, testar, medir, implantar, gerenciar configurações do software. Ao final da \textit{release}, uma versão de produto de software é entregue ao cliente e o ciclo se inicia novamente.
 
-O planejamento de release é uma atividade essencial realizada no início de cada novo ciclo de produção. Nesse momento são definidas as funcionalidades que serão implementadas para próxima versão de liberação do produto, além dos demais recursos do projeto que deverão ser alocados. Mesmo com o alto nível de interação entre as pessoas, característico em projetos de desenvolvimento ágil, o planejamento de release é uma tarefa difícil tanto computacionalmente quanto cognitivamente, pois diversos tipos de incertezas tornam difícil a definição e estruturação do problema a ser atacado\cite{Ngo}.
+O planejamento de \textit{release} é uma atividade essencial realizada no início de cada novo ciclo de produção. Nesse momento são definidas as funcionalidades que serão implementadas para próxima versão de liberação do produto, além dos demais recursos do projeto que deverão ser alocados. Mesmo com o alto nível de interação entre as pessoas, característico em projetos de desenvolvimento ágil, o planejamento de release é uma tarefa difícil tanto computacionalmente quanto cognitivamente, pois diversos tipos de incertezas tornam difícil a definição e estruturação do problema a ser atacado\cite{Ngo}.
 
-Desta forma, é fundamental para os times de desenvolvimento ágil que o planejamento de release possua um alto nível de confiabilidade\cite{McDaid}.
+Desta forma, é fundamental para os times de desenvolvimento ágil que o planejamento de \textit{release} possua um alto nível de confiabilidade\cite{McDaid}.
 
-A disponibilidade de dados confiáveis, na frequência necessária, permite que engenheiros e gerentes tomem decisões que podem ser fundamentais para permitir que o processo de desenvolvimento de software tenha sucesso e que ao final seja entregue um produto de qualidade \cite{codemine}. Processos de desenvolvimento
-de software adaptativos são constantemente afetados por mudanças nas condições de negócio. O antigo modo de operação reativo precisa ser substituído por decisões em tempo real e proativas baseadas em informações atualizadas e compreensivas\cite{artAndScience}. Na Microsoft, por exemplo, vários times utilizam dados coletados para melhorar processos como:
+A disponibilidade de dados confiáveis, na frequência necessária, permite que engenheiros e gerentes tomem decisões que podem ser fundamentais para permitir que o processo de desenvolvimento de software tenha sucesso e que ao final seja entregue um produto de qualidade \cite{codemine}. Processos de desenvolvimento de software adaptativos são constantemente afetados por mudanças nas condições de negócio. O antigo modo de operação reativo precisa ser substituído por decisões em tempo real e proativas baseadas em informações atualizadas e compreensivas\cite{artAndScience}. Na Microsoft, por exemplo, vários times utilizam dados coletados para melhorar processos como:
 
 \begin{itemize}
     \item Avaliação de riscos e mudança em ferramentas de análise de impacto.
@@ -28,113 +28,52 @@ de software adaptativos são constantemente afetados por mudanças nas condiçõ
     \item Acompanhamento de tendências e relatórios do status de desenvolvimento.
 \end{itemize}
 
-\textcolor{red}{Os métodos atuais de planejamento de release utilizam de informações, \textit{stakeholders}
-e conhecimento estáticos e predefinidos, os principais defeitos dessa abordagem
-estão relacionados a incapacidade de lidar com a grande quantidade de dados
-relacionados as mudanças constantes que estão acontecendo. A utilização de
-\textit{Big Data Analytics} oferece o principal caminho para auxiliar na tomada
-de decisões proativas e rápidas para o ciclo de desenvolvimento\cite{artAndScience}.}
-
-\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Reescrever o parágrafo acima. Está bem confuso, além de erros de pontuação. Veja como aqui no texto o mesmo problema da apresentação se manifestou. De repente, do nada, aparecem o Software Analytics e o Big Data. Outro questionamento: por que preciso analisar grandes volumes de dados para planejar release?!?!?}
-
-Neste trabalho serão investigadas técnicas e ferramentas de mineração em repositórios de software para recuperar e analisar dados que possam apoiar a tomada de decisão sobre na atividade de planejamento de releases.
-
+    Os métodos atuais de planejamento de \textit{release} utilizam diversas fontes de informação para aprimorar as decisões e diminuir incertezas, estas fontes podem incluir: \textit{stakeholders}, dados coletados de desenvolvedores, informações de \textit{bugtrackers}, entre outras. Os principais defeitos da abordagem tradicional de planejamento de \textit{release} estão relacionados a incapacidade de lidar com as mudanças constantes que estão acontecendo durante a evolução do projeto. A literatura sugere várias técnicas e métodos para reduzir as incertezas deste processo,~\cite{artAndScience}, por exemplo, sugere a utilização de \textit{Software Analytics} como caminho para auxiliar na tomada de decisões para o ciclo de desenvolvimento.
+Neste trabalho serão investigadas técnicas e ferramentas de mineração em repositórios de software para recuperar e analisar dados que possam apoiar a tomada de decisão sobre na atividade de planejamento de \textit{releases}.
 
 \section{Problema}
 \label{int:pro}
-Vista a relevância da fase de planejamento de sprint em um projeto ágil,
-formulou-se o seguinte problema, que motiva o desenvolvimento desta pesquisa.
+Vista a relevância da fase de planejamento de \textit{sprint} em um projeto ágil, formulou-se o seguinte problema, que motiva o desenvolvimento desta pesquisa.
 
 \todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{A relevância da atividade de planejamento de release é sem dúvida uma motivação. Contudo, o problema precisa ser melhor escrito, inclusive com citações que corroborem com a mesma percepção sobre ele}
 
-
-
 \begin{center}
- \textit{Dificuldade na tomada de decisões de priorização de features em
-  Release Plannings}
+ \textit{Dificuldade na tomada de decisões de priorização de atividades em \textit{Release Plannings}}
 \end{center}
 
 
 \section{Objetivos}
 \label{int:obj}
-Para uma melhor estruturação do trabalho, foi utilizado o método do
-GQM \textit{(Goal, Question, Metric)}, que foi definido pela NASA Goddard Space
-Flight, e que propõe uma abordagem topdown para uma melhor organização de objetivos
-de um projeto. O GQM propõe uma estrutura em três níveis\cite{gqm}:
 
-\begin{itemize}
-    \item \textbf{Objetivos (Goal):} Nível conceitual, onde são definidos os
-        objetivos do trabalho ou projeto.
-    \item \textbf{Questões (Question):} Nível operacional, onde são definidas um
-        conjunto de questões para caracterizar o objeto ou objetivo do projeto.
-    \item \textbf{Métricas (Metric):} Nível quantitativo, onde são definidos um
-        conjunto de métricas a serem analisadas para que as questões associadas
-        a elas possam ser respondidas.
-\end{itemize}
-
-\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Como não há validação da solução, então vamos retirar o GQM do TCC1. Descreva o objetivo geral e específicos do trabalho somente. Os objetivos devem ser vistos como o foco, diretrizes que serão persseguidas para que a solução seja construída, bem como a validação.}
-
-
-Utilizando-se destas ideias foi definido um objetivo geral do trabalho, e alguns
-objetivos específicos desta primeira fase. O objetivo geral foi definido como:
-
-\begin{center}
-    \textit{Análise do uso de Software Analytics para a priorização
-        de atividades em projetos de desenvolvimento ágil.}
-\end{center}
-
-Como o trabalho foi dividido em duas fases, os objetivos específicos da primeira
-fase foram definidos como:
+O objetivo geral deste trabalho consiste na realização de um estudo de caso onde será avaliada a relação entre relevância das \textit{issues} de um projeto e a priorização de atividades em um processo de planejamento de \textit{release}. Como o trabalho foi dividido em duas fases, os objetivos específicos da primeira fase foram definidos como:
 
 \begin{itemize}
     \item Levantar fundamentação teórica necessária para apoiar o trabalho.
-    \item Definir técnicas e ferramentas de \textit{Software Analytics} que deverão ser utilizadas.
+    \item Definir técnicas e ferramentas de mineração e recuperação de de dados de software que deverão ser utilizadas.
     \item Definir e caracterizar o projeto para estudo de caso.
     \item Montar infraestrutura computacional necessária para a realização do trabalho.
-    \item Aplicar técnicas de \textit{Software Analytics} no projeto de estudo de caso e analisar resultados.
 \end{itemize}
 
 \section{Questão de Pesquisa}
 \label{int:que}
-\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Dê uma olhadinha naquele paper da Mary Shaw que dá dicas sobre a formulação da questão de pesquisa}
 
-Diferentemente de outros campos da ciência e engenharia que possuem paradigmas de
-pesquisa bem desenvolvidos, a engenharia de software ainda não desenvolveu um
-método ou modelo de guia para estes tipos de estudos. Por este motivo, é
-comum ver críticas relatórios de pesquisas de software que fogem dos paradigmas
-tradicionais\cite{shaw}.A questão de pesquisa é a parte mais importante de um estudo, ela deve guiar toda
-a metodologia de pesquisa. Um estudo deve fazer perguntas que que identifiquem e
-definam o escopo das atividades de pesquisa\cite{guidelines}.
+Diferentemente de outros campos da ciência e engenharia que possuem paradigmas de pesquisa bem desenvolvidos, a engenharia de software ainda não desenvolveu um método ou modelo de guia para estes tipos de estudos. Por este motivo, é comum ver críticas relatórios de pesquisas de software que fogem dos paradigmas tradicionais\cite{shaw}.A questão de pesquisa é a parte mais importante de um estudo, ela deve guiar toda a metodologia de pesquisa. Um estudo deve fazer perguntas que que identifiquem e definam o escopo das atividades de pesquisa\cite{guidelines}.
 
-Com base no problema identificado, foi possível derivar uma questão de pesquisa
-que deve ser respondida ao final deste trabalho.
+Com base no problema identificado, foi possível derivar uma questão de pesquisa que deve ser respondida ao final deste trabalho.
 
 \begin{center}
-    \textit{É possível utilizar a relevância das issues de um projeto para ajudar
-    na priorização de tarefes de uma sprint?}
+    \textit{Dada a relevância das \textit{issues} de um projeto de software, como podemos relacioná-las com as atividades de um projeto para apoiar decisões durante a fase de planejamento de \textit{release}?}
 \end{center}
 
 \subsection{Questões Secundárias}
 \label{int:que:sec}
 
-\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Considere o que conversamos quando da apresentação}
-
-
-A partir desta questão inicial, é possivel definir questões secundárias para
-permitir  a investigação de métodos que possibilitem a solucionar questão primária.
-Como o cálculo de relevância pode ser realizado
-de formas diferentes é necessário escolher o melhor método para a realização
-desta tarefa, além disto métodos de análise devem ser definidos para que
-a melhor interpretação dos dados seja feita. As questões secundárias
-foram definidas como as seguintes abaixo:
+A partir desta questão inicial, é possível definir questões secundárias para permitir a investigação de métodos que possibilitem a solucionar questão primária. Como o cálculo de relevância pode ser realizado de formas diferentes é necessário escolher o melhor método para a realização desta tarefa, além disto métodos de análise devem ser definidos para que a melhor interpretação dos dados seja feita. As questões secundárias foram definidas como as seguintes abaixo:
 
 \begin{itemize}
-    \item É possível utilizar o algoritmo de ranqueamento de páginas para calcular a relevância das issues?
-    \item Quais técnicas de \textit{Software Analytics} podem ser utilizadas para
-        determinar se a relevância das issues possuem relação com o planejamento
-        de sprint?
-    \item É possível utilizar ambientes de Big Data para aumentar o espaço amostral
-        do experimento?
+    \item Qual é a melhor maneira de calcular a relevância das \textit{issues} de um projeto?
+    \item Como podemos determinar relação entre as relevância das \textit{issues} de um projeto e o planejamento de \textit{sprint}?
+    \item Quais técnicas podem ser utilizadas para validar as soluções desenvolvidas neste trabalho?
 \end{itemize}
 
 
@@ -143,9 +82,9 @@ foram definidas como as seguintes abaixo:
 Este trabalho foi dividido em cinco capítulos, são eles:
 
 \begin{itemize}
-    \item \textbf{Capítulo 1 - Introdução:} Capítulo responsável \todo{O capítulo não é o responsável pela apresentação... Use a voz passiva e reescreva os demais itens} pela apresentação do contexto do trabalho, as ideias que o motivaram, as questões a serem respondidas e objetivos a serem alcançados.
-    \item \textbf{Capítulo 2 - Metodologia:} Apresenta-se a metodologia a ser utilizada, tanto de pesquisa quanto de implementação e projeto para o estudo de caso.
-    \item \textbf{Capítulo 3 - Referencial Teórico:} Apresenta-se o referencial teórico que serviu como base para essa pesquisa.
-    \item \textbf{Capítulo 4 - Projeto de Estudo de Caso:} Descrição da aplicação das técnicas e ferramentas definidas em um projeto de desenvolvimento de software ágil.
-    \item \textbf{Capítulo 5 - Conclusão:} Discussão dos resultados e conclusões sobre o estudo de caso e proposta de próximos passos para a continuação do trabalho.
+    \item \textbf{Capítulo 1 - Introdução:} Neste capitulo encontra-se a introdução do trabalho que está dividida nos seguintes tópicos: contexto do trabalho, problema, objetivos e questão de pesquisa.
+    \item \textbf{Capítulo 2 - Metodologia:} Neste capitulo apresenta-se, primeiramente, a metodologia de pesquisa utilizada e, posteriormente, são apresentadas as tecnologias utilizadas para tornar possível a execução deste estudo.
+    \item \textbf{Capítulo 3 - Referencial Teórico:} Neste capitulo são apresentados os conceitos teóricos que fundamentaram este estudo, quais algoritmos serão utilizados e como eles serão aplicados para a execução do exemplo de uso.
+    \item \textbf{Capítulo 4 - Exemplo de Uso:} Neste capitulo descreveu-se como o ranqueamento de \textit{issues} foi realizado no projeto escolhido, posteriormente, são apresentados os resultados deste ranqueamento.
+    \item \textbf{Capítulo 5 - Conclusão e Próximos Passos:} Além das considerações finais relacionadas ao exemplo de uso realizada nesta primeira parte do trabalho, descreveu-se os objetivos planejados para a segunda parte do trabalho.
 \end{itemize}
