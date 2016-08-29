@@ -3,10 +3,7 @@
 \section{Metodologia de Pesquisa}
 \label{met:pes}
 
-
-A utilização de experimentação é relivamente recente na área de Engenharia de Software. Um dos trabalhos seminais nessa área foi proposto por \citeonline{guidelines-2007}, e teve o objetivo de estabelecer um guia para se realizar revisões sistemáticas da literatura. Nesta monografia foram utilizados alguns elementos da estrutura do protocolo proposto por \citeonline{guidelines-2007} de forma a sistematizar a busca por estudos que orientassem esse trabalho. Um dos elementos previstos no protocolo, e que foi utilizado nesta monografia, é a composição de uma \textit{string} de busca em bases digitais, originalmente proposto na área de medicina, o PICO. \cite{citeulike:10757239} Trata-se de uma abstratação proposta para agrupar conjuntos de termos e auxiliar a composição da \textit{string} de busca a ser submetida às bases. Segundo a adaptação proposta, o PICO procura organizar:
-
-
+A utilização de experimentação é relativamente recente na área de Engenharia de Software. Um dos trabalhos seminais nessa área foi proposto por \citeonline{guidelines-2007}, e teve o objetivo de estabelecer um guia para se realizar revisões sistemáticas da literatura. Nesta monografia foram utilizados alguns elementos da estrutura do protocolo proposto por \citeonline{guidelines-2007} de forma a sistematizar a busca por estudos que orientassem esse trabalho. Um dos elementos previstos no protocolo, e que foi utilizado nesta monografia, é a composição de uma \textit{string} de busca em bases digitais, originalmente proposto na área de medicina, o PICO. \cite{citeulike:10757239} Trata-se de uma abstratação proposta para agrupar conjuntos de termos e auxiliar a composição da \textit{string} de busca a ser submetida às bases. Segundo a adaptação proposta, o PICO procura organizar:
 
 \begin{itemize}
     \item \textit{Population} (População): A população que o estudo será aplicado, no contexto de engenharia de software pode ser: uma determinada função (Desenvolvedores, Gerentes, Usuários), categoria de engenheiro de software (Iniciante, Junior, Senior), uma área de aplicação, ou um setor da industria.
@@ -15,16 +12,12 @@ A utilização de experimentação é relivamente recente na área de Engenharia
     \item \textit{Outcome} (Resultado): Resultados da aplicação da intervenção na população.
 \end{itemize}
 
-
-
 Assim, neste trabalho os termos da \textit{string} de busca foram assim definidos:
-
-\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Reescrever o PICO e a STRING de busca de acordo com nossas conversas}
 
 \begin{itemize}
     \item \textbf{População:} Repositórios de software-livre.
     \item \textbf{Intervention (Intervenção):} Análise de dados em ambientes de \textit{Big Data} com utilização de algoritmos \textit{Page Ranking} e centralidade de redes em \textit{issues} de repositórios de código.
-    \item \textbf{Comparação} Não procede.
+    \item \textbf{Comparação:} Não se aplica neste estudo.
     \item \textbf{Resultado:} Determinar a eficiência da utilização de \textit{Software Analytics} para apoiar decisões de planejamento de release.
 \end{itemize}
 
@@ -32,78 +25,41 @@ Assim, neste trabalho os termos da \textit{string} de busca foram assim definido
 De acordo com a estrutura do PICO, os termos que pertencem ao mesmo grupo/conjuntos são agrupados utilizando o operador \textbf{OR} e entre grupos/conjuntos, são agrupadas com o operador \textbf{AND}. Desta forma, a string de busca deste trabalho foi definida como:
 
 \begin{center}
-    \textit{(GIT AND GITHUB AND GITLAB AND REPO AND REPOSITORIES AND FREE
-    SOFTWARE AND SOFTWARE) OR (DATA ANALYTICS AND SOFTWARE ANALYTICS AND BIG DATA
-    AND DATA MINING AND PAGE RANKING AND CENTRALITY AND GRAPH THEORY AND GRAPH AND
-    FLOW NETWORKS AND NETWORK) OR (RELEASE AND RELEASE PLANNING AND PLANNING AND
-    AGILE METHODS AND WIKI AND ISSUE AND AGILE AND PRIORITIZE) OR (EFFICIENCY AND 
-    APPROACH AND THEORETICAL AND RESULT)}
+        \textit{(REPOSITORIES OR 'FREE SOFTWARE') AND ('DATA ANALYTICS' OR 'SOFTWARE ANALYTICS' OR 'DATA MINING' OR 'PAGE RANKING') AND (RELEASE OR 'RELEASE PLANNING' OR 'SOFTWARE RELEASE PLANNING')}
 \end{center}
 
 A base digital escolhida foi a Scopus. A \textit{string} foi aplicada e os principais artigos que norteaream esta monografia foram recuperados do conjunto de resultados retornado.
 
 \section{Tecnologias Utilizadas}
 \label{met:tec}
-Para a realização deste trabalho, foram escolhidas as ferramentas e serviços
-que serão utilizadas para a gerencia de atividades, repositórios de código e
-texto e desenvolvimento. As escolhas foram feitas com base na experiência de uso
-destas ferramentas.
+Para a realização deste trabalho, foram escolhidas as ferramentas e serviços que serão utilizadas para a gerencia de atividades, repositórios de código e texto e desenvolvimento. As escolhas foram feitas com base na experiência de uso destas ferramentas.
 
 \subsection{Git}
 \label{met:tec:git}
-Git é uma ferramenta de controle de versão gratuita e de código aberto criada
-por Linus Torvalds em 2005~\cite{chacon}. Neste trabalho o Git foi utilizado 
-para controle de versão dos códigos utilizados na implementação do trabalho
-e deste texto.
+Git é uma ferramenta de controle de versão gratuita e de código aberto criada por Linus Torvalds em 2005~\cite{chacon}. Neste trabalho o Git foi utilizado para controle de versão dos códigos utilizados na implementação do trabalho e deste texto.
 
 \subsection{Github}
 \label{met:tec:github}
-O Github é um serviço que provê a utilização do Git em uma plataforma Web. Ele 
-disponibiliza repositórios remotos para armazenamento de código, wikis e serviços
-de \textit{tracking} de issues~\cite{github}. Além disto, o Github ainda possui uma API para
-que permite alterar e consultar repositórios utilizando requisições HTTP.
+O Github é um serviço que provê a utilização do Git em uma plataforma Web. Ele disponibiliza repositórios remotos para armazenamento de código, wikis e serviços de \textit{tracking} de issues~\cite{github}. Além disto, o Github ainda possui uma API para que permite alterar e consultar repositórios utilizando requisições HTTP.
 
 \subsection{Gitlab}
 \label{met:tec:gitlab}
-O Gitlab, assim como o Github, é um serviço que provê a utilização do Git como
-uma plataforma Web. Ele também possui repositórios remotos para armazenamento
-de código, wikis, serviços de \textit{tracking de issues}. Porém diferentemente
-do Github, o Gitlab é um software livre licenciado sob a licença MIT~\cite{gitlab}.
+O Gitlab, assim como o Github, é um serviço que provê a utilização do Git como uma plataforma Web. Ele também possui repositórios remotos para armazenamento de código, wikis, serviços de \textit{tracking de issues}. Porém diferentemente do Github, o Gitlab é um software livre licenciado sob a licença MIT~\cite{gitlab}.
 
 \subsection{Python}
 \label{met:tec:python}
-Python é uma linguagem de programação dinâmica, interpretada, de alto nível e de 
-uso geral criada por Guido Van Rossum. Esta linguagem possui estruturas de dados
-de alto nível, é dinamicamente tipada e é muito atrativa para o desenvolvimento rápido
-de aplicações e scripts~\cite{python}. Neste trabalho, a linguagem Python foi utilizada para a criação
-de scripts e a execução do algoritmo de ranqueamento de páginas.
-
-
+Python é uma linguagem de programação dinâmica, interpretada, de alto nível e de  uso geral criada por Guido Van Rossum. Esta linguagem possui estruturas de dados de alto nível, é dinamicamente tipada e é muito atrativa para o desenvolvimento rápido de aplicações e scripts~\cite{python}. Neste trabalho, a linguagem Python foi utilizada para a criação de scripts e a execução do algoritmo de ranqueamento de páginas.
 
 \todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Pensei em aproveitar a seção abaixo, mas entendo que seria muita forçação de barra. Pensando bem é melhor retirá-la, ou então reescrever o texto, ao moldes do que eu fiz no PICO, e dizendo que nos inspiramos na estrutura proposta para um estudo de caso. Lembre-se que no TCC2 estruturaremos o estudo de caso como porposto por Yin. Caso você decida retirar é preciso descrever a idéia de um exemplo de uso que será descrito no cap. 4. Existem outros aspectos relacionados a metodologia que você poderia utilizar e enriquecer esse capítulo, como naquele paper que te passei, o Towards a decision-making structure for selecting a research design in empirical software engineering.}
 
 \section{Estudo de Caso}
 \label{met:est}
-O método de pesquisa escolhido para este trabalho foi o estudo de caso. Um estudo de caso é uma investigação experimental que investiga um fenômeno contemporâneo dentro de seu contexto da vida 
-os limites entre o fenômeno e o contexto não estão claramente 
-grandes motivos para a escolha deste método é que ele não requer controle sobre os eventos por parte do pesquisador~\cite{yin}.
+O método de pesquisa escolhido para este trabalho foi o estudo de caso. Um estudo de caso é uma investigação experimental que investiga um fenômeno contemporâneo dentro de seu contexto da vida real, em um estudo de caso, os limites entre o fenômeno e o contexto não estão claramente definidos. O fator motivador para a escolha deste método de pesquisa é que ele não requer controle sobre os eventos por parte do pesquisador~\cite{yin}.
 
-O primeiro componente importante para a elaboração de um estudo de caso é a definição de uma questão de pesquisa, conforme definida na sessão~\ref{int:que}. O segundo componente necessário é uma proposição de estudo que deve ser feita com base na questão 
-de pesquisa para que seja possível responde-la, no caso deste trabalho é como \textcolor{red}{ REESCREVER --
- a utilização de \textit{Software 
-Analytics} pode ajudar nas tomadas de decisões de priorização em \textit{Release Plannings}.} O terceiro ponto do estudo de caso é a unidade de análise, ou seja a definição do 'caso',
-que, para este trabalho, é o SBP.
+O primeiro componente importante para a elaboração de um estudo de caso é a definição de uma questão de pesquisa, conforme definida na sessão~\ref{int:que}. O segundo componente necessário é uma proposição de estudo que deve ser feita com base na questão de pesquisa para que seja possível responde-la, no caso deste trabalho é como podemos relacionar a relevância das \textit{issues} de um projeto com as features, de forma a apoiar decisões de planejamento de \textit{release} . O terceiro ponto do estudo de caso é a unidade de análise, ou seja a definição do 'caso', que, para este trabalho, é o SBP.
 
-Os próximos componentes do estudo de caso estão relacionados a como os dados das
-proposições estão unidos e quais são critérios de interpretação das descobertas.
-Neste estudo, são relacionados dados da Wiki, dos \textit{milestones}, das \textit{issues} 
-e dos comentários dos repositórios de código com a relevância das \textit{issues}, para isto
-é utilizado como parâmetro o ranque das \textit{issues} para determinar quais delas 
+Os próximos componentes do estudo de caso estão relacionados a como os dados das proposições estão unidos e quais são critérios de interpretação das descobertas. Neste estudo, são relacionados dados da Wiki, dos \textit{milestones}, das \textit{issues} e dos comentários dos repositórios de código com a relevância das \textit{issues}, para isto é utilizado como parâmetro o ranque das \textit{issues} para determinar quais delas 
 são mais importantes dentro do espaço amostral.
-
-\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Reescrever o PICO e a STRING de busca de acordo com nossas conversas}
-
-
 
 Desta forma, podemos definir os componentes do estudo de caso como os seguintes:
 
@@ -115,5 +71,3 @@ Desta forma, podemos definir os componentes do estudo de caso como os seguintes:
         de código cuja organização é feita dentro do repositório nas Wikis, \textit{milestones}
         e \textit{issues}.
 \end{itemize}
-
-
