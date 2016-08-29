@@ -2,54 +2,34 @@
 \label{met}
 \section{Metodologia de Pesquisa}
 \label{met:pes}
-Enquanto as técnicas de pesquisa em engenharia de software
-ganham maturidade, muitos pesquisadores sugerem o uso de frameworks e metodologias
-vindas de outras área de conhecimento, como a medicina\cite{guidelines}.Recentemente
-Petticrew e Roberts sugeriram a utilização do modelo PICOC \textit{(Population,
-Intervention, Comparison, Outcome, Context)}, que é divido da seguinte forma\cite{petticrew}:
+
+
+A utilização de experimentação é relivamente recente na área de Engenharia de Software. Um dos trabalhos seminais nessa área foi proposto por \citeonline{guidelines-2007}, e teve o objetivo de estabelecer um guia para se realizar revisões sistemáticas da literatura. Nesta monografia foram utilizados alguns elementos da estrutura do protocolo proposto por \citeonline{guidelines-2007} de forma a sistematizar a busca por estudos que orientassem esse trabalho. Um dos elementos previstos no protocolo, e que foi utilizado nesta monografia, é a composição de uma \textit{string} de busca em bases digitais, originalmente proposto na área de medicina, o PICO. \cite{citeulike:10757239} Trata-se de uma abstratação proposta para agrupar conjuntos de termos e auxiliar a composição da \textit{string} de busca a ser submetida às bases. Segundo a adaptação proposta, o PICO procura organizar:
+
+
 
 \begin{itemize}
-    \item \textbf{População (Population):} A população que o experimento será
-        aplicado, no contexto de engenharia de software pode ser: uma determinada
-        função (Desenvolvedores, Gerentes, Usuários), categoria de engenheiro de
-        software (Iniciante,Junior,Senior), uma área de aplicação, ou um setor
-        da industria.
-    \item \textbf{Intervention (Intervenção):} É a metodologia, ferramenta,
-        tecnologia ou procedimento aplicado no experimento.
-    \item \textbf{Comparação (Comparison):} É a metodologia, ferramenta,
-        tecnologia ou procedimento com o qual a intervenção está sendo comparada.
-    \item \textbf{Resultado  (Outcome):} Resultados da aplicação da intervenção na
-        população.
-    \item \textbf{Contexto (Context):} Contexto onde o experimento foi realizado
-        (Academia ou Industria), os participantes que fizeram parte do experimento
-        (Alunos, Professores, Profissionais), e as tarefas que foram feitas
-        (Grande ou Baixa Escala).
-\end{itemize}
-
-Utilizando o modelo PICOC é possível estruturar os termos relativos a esta pesquisa
-da seguinte forma:
-
-\begin{itemize}
-    \item \textbf{População (Population):} Repositórios de código aberto.
-    \item \textbf{Intervention (Intervenção):} Análise de dados em ambientes de
-        \textit{Big Data} com utilização de algoritmos \textit{Page Ranking} e
-        centralidade de redes em \textit{issues} de repositórios de código.
-    \item \textbf{Comparação (Comparison):} Planejamentos de release sem a utilização
-        sistemática de análise de dados.
-    \item \textbf{Resultado  (Outcome):} Determinar a eficiência da utilização de
-        \textit{Software Analytics} para apoiar decisões de planejamento de release.
-    \item \textbf{Contexto (Context):} Projetos de software livre que utilizam
-        repositórios de código distribuídos e que fazem a organização das releases
-        utilizando \textit{issues}.
+    \item \textit{Population} (População): A população que o estudo será aplicado, no contexto de engenharia de software pode ser: uma determinada função (Desenvolvedores, Gerentes, Usuários), categoria de engenheiro de software (Iniciante, Junior, Senior), uma área de aplicação, ou um setor da industria.
+    \item \textit{Intervention} (Intervenção): É a metodologia, ferramenta, tecnologia ou procedimento aplicado no estudo.
+    \item \textit{Comparison} (Comparação): É a metodologia, ferramenta, tecnologia ou procedimento com o qual a intervenção está sendo comparada.
+    \item \textit{Outcome} (Resultado): Resultados da aplicação da intervenção na população.
 \end{itemize}
 
 
-A partir da estrutura apresentada acima, que utiliza o método PICOC, podemos agrupar
-os termos relevantes a esta pesquisa em uma \textit{string} onde os termos da mesma
-família são agrupados utilizando o operador \textbf{AND} e as familias são agrupadas
-com o operador \textbf{OR}. Desta forma, foi possivel estruturar uma \textit{string} 
-de busca que permitisse abranger uma maior quantidade de \textit{papers} relevantes 
-para esta pesquisa. Esta string foi definida como:
+
+Assim, neste trabalho os termos da \textit{string} de busca foram assim definidos:
+
+\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Reescrever o PICO e a STRING de busca de acordo com nossas conversas}
+
+\begin{itemize}
+    \item \textbf{População:} Repositórios de software-livre.
+    \item \textbf{Intervention (Intervenção):} Análise de dados em ambientes de \textit{Big Data} com utilização de algoritmos \textit{Page Ranking} e centralidade de redes em \textit{issues} de repositórios de código.
+    \item \textbf{Comparação} Não procede.
+    \item \textbf{Resultado:} Determinar a eficiência da utilização de \textit{Software Analytics} para apoiar decisões de planejamento de release.
+\end{itemize}
+
+
+De acordo com a estrutura do PICO, os termos que pertencem ao mesmo grupo/conjuntos são agrupados utilizando o operador \textbf{OR} e entre grupos/conjuntos, são agrupadas com o operador \textbf{AND}. Desta forma, a string de busca deste trabalho foi definida como:
 
 \begin{center}
     \textit{(GIT AND GITHUB AND GITLAB AND REPO AND REPOSITORIES AND FREE
@@ -60,9 +40,7 @@ para esta pesquisa. Esta string foi definida como:
     APPROACH AND THEORETICAL AND RESULT)}
 \end{center}
 
-Esta \textit{string} foi aplicada a base Scopus e todos os \textit{papers} 
-utilizados como base para este trabalho foram retirados do conjunto de resultados
-retornados.
+A base digital escolhida foi a Scopus. A \textit{string} foi aplicada e os principais artigos que norteaream esta monografia foram recuperados do conjunto de resultados retornado.
 
 \section{Tecnologias Utilizadas}
 \label{met:tec}
@@ -100,23 +78,21 @@ de alto nível, é dinamicamente tipada e é muito atrativa para o desenvolvimen
 de aplicações e scripts~\cite{python}. Neste trabalho, a linguagem Python foi utilizada para a criação
 de scripts e a execução do algoritmo de ranqueamento de páginas.
 
+
+
+\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Pensei em aproveitar a seção abaixo, mas entendo que seria muita forçação de barra. Pensando bem é melhor retirá-la, ou então reescrever o texto, ao moldes do que eu fiz no PICO, e dizendo que nos inspiramos na estrutura proposta para um estudo de caso. Lembre-se que no TCC2 estruturaremos o estudo de caso como porposto por Yin. Caso você decida retirar é preciso descrever a idéia de um exemplo de uso que será descrito no cap. 4. Existem outros aspectos relacionados a metodologia que você poderia utilizar e enriquecer esse capítulo, como naquele paper que te passei, o Towards a decision-making structure for selecting a research design in empirical software engineering.}
+
 \section{Estudo de Caso}
 \label{met:est}
-A estratégia de pesquisa escolhida para que fosse aplicada neste trabalho foi o
-estudo de caso. Um estudo de caso é uma investigação empírica que investiga um 
-fenômeno contemporâneo dentro de seu contexto da vida real, especialmente quando 
-os limites entre o fenômeno e o contexto não estão claramente definidos. Um dos 
-grandes motivos para a escolha desta técnica é que ela não requer controle sobre
-os eventos por parte do pesquisador~\cite{yin}.
+O método de pesquisa escolhido para este trabalho foi o estudo de caso. Um estudo de caso é uma investigação experimental que investiga um fenômeno contemporâneo dentro de seu contexto da vida 
+os limites entre o fenômeno e o contexto não estão claramente 
+grandes motivos para a escolha deste método é que ele não requer controle sobre os eventos por parte do pesquisador~\cite{yin}.
 
-O primeiro componente importante para a elaboração de um estudo de caso é a definição
-de uma questão de pesquisa, o que foi feito na sessão~\ref{int:que}. O segundo
-componente necessário é uma proposição de estudo que deve ser feita com base na questão 
-de pesquisa para que seja possível responde-la, no caso deste trabalho é como a utilização de \textit{Software 
-Analytics} pode ajudar nas tomadas de decisões de priorização em \textit{Release Plannings}.
-O terceiro ponto do estudo de caso é a unidade de análise, ou seja a definição de 'caso',
-que, para este trabalho, é um repositório de código que possua uma estrutura organizacional
-dentro da Wiki e das \textit{issues} do próprio repositório~\cite{yin}.
+O primeiro componente importante para a elaboração de um estudo de caso é a definição de uma questão de pesquisa, conforme definida na sessão~\ref{int:que}. O segundo componente necessário é uma proposição de estudo que deve ser feita com base na questão 
+de pesquisa para que seja possível responde-la, no caso deste trabalho é como \textcolor{red}{ REESCREVER --
+ a utilização de \textit{Software 
+Analytics} pode ajudar nas tomadas de decisões de priorização em \textit{Release Plannings}.} O terceiro ponto do estudo de caso é a unidade de análise, ou seja a definição do 'caso',
+que, para este trabalho, é o SBP.
 
 Os próximos componentes do estudo de caso estão relacionados a como os dados das
 proposições estão unidos e quais são critérios de interpretação das descobertas.
@@ -124,6 +100,10 @@ Neste estudo, são relacionados dados da Wiki, dos \textit{milestones}, das \tex
 e dos comentários dos repositórios de código com a relevância das \textit{issues}, para isto
 é utilizado como parâmetro o ranque das \textit{issues} para determinar quais delas 
 são mais importantes dentro do espaço amostral.
+
+\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Reescrever o PICO e a STRING de busca de acordo com nossas conversas}
+
+
 
 Desta forma, podemos definir os componentes do estudo de caso como os seguintes:
 
