@@ -79,12 +79,7 @@ um remetente e um destinatário. Normalmente é preferível que o pacote percorr
 
 Ao longo dos anos, diferentes métodos de medida de centralidade foram criados, entre eles: \textcolor{red}{Citar as referências}
 Centralidade de Grau, Proximidade \textit{(Closeness)}, Intermediação \textit{(Betweenness)}, Autovetor \textit{(Eigen Vector)}, Informação, Intermediação de Fluxo, \textit{Rush Index}, Medidas de Influencia de Katz, Hubbell, Hoede e Taylor. Estes métodos diferem nas suposições
-iniciais que fazem para alcançar o objetivo de determinar o nó com maior importância, por exemplo,
-o algoritmo de Freeman de proximidade e intermediação conta apenas os caminhos geodésicos entre 
-os nós, assumindo que qualquer fluxo que percorra uma rede, siga sempre pelo caminho mais curto.
-Outros algoritmos como a centralidade de autovetor de Bonacich conta travessias, o que assume
-que as trajetórias podem ser sinuosas, atravessando nós e arestas repetidas vezes até chegar ao
-destino\cite{centrality}.
+iniciais que fazem para alcançar o objetivo de determinar o nó com maior importância, por exemplo, o algoritmo de Freeman de proximidade e intermediação conta apenas os caminhos geodésicos entre os nós, assumindo que qualquer fluxo que percorra uma rede, siga sempre pelo caminho mais curto.Outros algoritmos como a centralidade de autovetor de Bonacich conta travessias, o que assume que as trajetórias podem ser sinuosas, atravessando nós e arestas repetidas vezes até chegar ao destino\cite{centrality}.
 
 \todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Ok, mas qual a relação de centralidade com software analytics? e também o ranqueamento de páginas? Você não acredita que seria melhor essa discussão de centralidade na seção do Ranqueamento de Páginas?}
 
@@ -92,10 +87,7 @@ destino\cite{centrality}.
 \label{ref:ran}
 O algoritmo de ranqueamento de páginas foi criado por Larry Page e Sergey em 1996. Ele permite calcular a importância relativa de páginas da web e tem aplicações em mecanismos de busca, estimativas de trafego e navegação na web. O algoritmo foi criado com o intuito de prover uma solução de busca de informações na web a partir da estrutura dos links, usada no hipertexto da web. \cite{pageRank}.
 
-A premissa do algoritmo de ranqueamento de páginas é que cada página na web
-possui um número de links de saída e de entrada, e que páginas com um grande número de links são mais importantes do que as com poucos links. Além disso, o algoritmo também leva em consideração a relevância dos links de entrada de uma página, ou seja, se uma página da web possui um link de entrada que possui uma alta relevância, essa página tende a ser mais importante que outra que possua vários links mas que vieram de lugares mais obscuros \textcolor{red}{o que é mais obscuros?}.
-
-
+A premissa do algoritmo de ranqueamento de páginas é que cada página na web possui um número de links de saída e de entrada, e que páginas com um grande número de links são mais importantes do que as com poucos links. Além disso, o algoritmo também leva em consideração a relevância dos links de entrada de uma página, ou seja, se uma página da web possui um link de entrada que possui uma alta relevância, essa página tende a ser mais importante que outra que possua vários links mas que vieram de lugares mais obscuros \textcolor{red}{o que é mais obscuros?}.
 
 A função de ranqueamento de páginas é definida na seguinte forma:
 
@@ -144,3 +136,5 @@ Um dos problemas dessa função de ranqueamento, é que caso duas páginas da we
 
 \todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Incluir um parágrafo que faça o link de idéias entre esse capítulo e o próximo.}
 
+\textit{Faltou sessão para falar sobre planejamento de release e como organizar issues na wiki}
+\textit{Capitulo 19 do livro}

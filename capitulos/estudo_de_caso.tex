@@ -145,11 +145,11 @@ estrutura e condições favoráveis a isso.
 \label{est:ran:ver}
 
 Como foi visto na sessão~\ref{ref:ran} a utilização do algoritmo de ranqueamento
-de páginas depende que inicialmente exista um grafo direcionado. Um grafo direcionado, 
+de páginas depende que inicialmente exista um grafo direcionado.\footnote{Um grafo direcionado, 
 ou dígrafo, $D$ consiste de um conjunto finito de elementos não vazios $V(D)$
 chamados de vértices e um conjunto finito $A(D)$ de pares ordenados de vértices
 distintos chamados arcos. Desta forma, $V(D)$ é chamado de conjunto de vértices e
-$A(D)$ o conjunto de arcos de $D$~\cite{bang}.
+$A(D)$ o conjunto de arcos de $D$~\cite{bang}.}
 
 Para que um grafo do SPB fosse gerado, foi utilizada a API do Gitlab juntamente
 com um \textit{script Python} para que todas as \textit{issues}, \textit{milestones} e
@@ -176,7 +176,7 @@ ser visto nas figuras~\ref{fig:undirected} e~\ref{fig:directed}.
 
 \newpage
 \subsubsection{Issues}
-\label{est:ran:ver}
+\label{est:ran:iss}
 
 Como o foco do estudo é analisar a relevância das \textit{issues}, o dígrafo 
 foi gerado com base nelas. Dentro do grafo, cada \textit{issue} foi tratada
@@ -205,15 +205,15 @@ então utilizado para a aplicação do algoritmo de ranqueamento de páginas, a 
 
 
 \subsubsection{Milestones}
-\label{est:ran:ver}
+\label{est:ran:mil}
 
 Dentro do projeto SPB, um \textit{milestone} é uma história com um conjunto de 
 \textit{issues} associadas. Para que fosse possível uma maior aproximação com
 o ranqueamento de páginas considerou-se que todas as \textit{issues} dentro de
 um \textit{milestones} estão interligadas, de forma que elas formem um grafo completo,
 essa abstração pode ser vista na figura~\ref{fig:milestone-graph}.
-Um grafo $G$ é considerado como completo se cada par de vértices distintos em $G$
-são adjacentes~\cite{bang}.
+\footnote{Um grafo $G$ é considerado como completo se cada par de vértices distintos em $G$
+são adjacentes~\cite{bang}.}
 
 \newpage
 \begin{figure}[h]
@@ -223,8 +223,40 @@ são adjacentes~\cite{bang}.
     \label{fig:milestone-graph}
 \end{figure}
 
-\subsection{Visão Geral}
-\label{est:ran:vis}
-
 \section{Resultados}
 \label{est:res}
+
+Utilizando-se das abstrações descritas na seção \ref{est:ran} foi possível gerar um grafo representando as \textit{issues} do SPB. Este grafo apresenta as \textit{issues} mais altamente conectadas no centro e as menos conectadas nas bordas. Na figura \ref{fig:graph}, é possível perceber que a grande maioria das \textit{issues} tem poucas conexões, ou seja, possuem poucos comentários de marcação, além disto, em alguns casos estas \textit{issues} não estavam associadas a nenhum \textit{milestone}. Esse comportamento pode denotar um baixo índice de comunicação entre a equipe de desenvolvimento e os \textit{stakeholders} no inicio do projeto.
+
+\begin{figure}[h]
+    \centering
+        \includegraphics[keepaspectratio=true,scale=0.5]{figuras/graph.eps}
+    \caption{Grafo das issues do SPB}
+    \label{fig:graph}
+\end{figure}
+
+A partir do grafo representado na figura \ref{fig:graph}, foi executado o algoritmo de ranqueamento de páginas, o algoritmo utilizado foi o \textit{Page Ranking}, discutido na seção \ref{ref:ran}. Para permitir a execução do algoritmo, foram utilizadas as abstrações para \textit{issues} e \textit{milestones} discutidas nas seções \ref{est:ran:iss} e \ref{est:ran:mil}. Após a execução, o algoritmo exporta as \textit{issues} associadas a um valor numérico, de forma que, quanto maior o valor associado a uma \textit{issue}, maior o seu ranque relativo. No SPB, as dez \textit{issues} com o maior ranque relativo estão apresentadas na tabela \ref{tab:pagerank}. 
+
+\begin{table}[h]
+        \centering
+	\label{tab:pagerank}
+	
+        \begin{tabular}{| >{\centering}m{10cm} | c |}
+        	\toprule
+		\textbf{Issue} & \textbf{Pagerank} \\
+		\midrule
+		Moderação do valor dos recursos economizados do relato de uso & 0.0059332219490603475 \\ \hline
+                Configurar o NGINX para servir os dados do syslog & 0.003453026773943251 \\ \hline
+                Exibir mensagem de erro próxima ao campo instituição no relato de uso &  0.003453026773943251 \\\hline
+                Subir o gitlab 8.5 usando o pacote feito. & 0.003453026773943251 \\\hline
+                Melhora da busca global & 0.003453026773943251 \\\hline
+                Tela branca em Editar blocos laterais de comunidade & 0.003453026773943251 \\\hline
+                Importar as notícias wiki do portal &  0.0030396609114237347 \\\hline
+                Cadastro de usuário quebrado (username: boscojr) & 0.002626295048904218 \\\hline
+                Adicionar email do usuário na Tela de processar solicitação de Entrar na comunidade. & 0.002626295048904218 \\\hline
+                Retirar pergunta por SISP na criação de uma nova instituição? & 0.002626295048904218 \\\hline
+		\bottomrule      
+ 	\end{tabular}
+\end{table}
+
+Com base nas \textit{issues} melhores ranqueadas, foi possível perceber que alguns termos aparecem com maior frequência, são eles: \textbf{Relato de Uso}, \textbf{Busca Global}, \textbf{Gitlab} e \textit{SISP}. Outras das \textit{issues} que aparecem com o ranque alto, estão ligadas a atividades de manutenção, sejam elas: correção de \textit{bugs}, melhorias de \textit{front-end} e infraestrutura. Desta forma, aparentemente, as \textit{features} de implementação do relato de uso, da busca global, atualização do Gitlab e algumas das correções de \textit{bugs} foram consideradas de maior importância do que aquelas que apresentaram grau de relevância menor. Apesar de ter sido possível relacionar a relevância das \textit{issues} e as \textit{features} do SPB, este processo foi feito manualmente e não foi automatizado para esta primeira metade do trabalho, um ponto que deve ser atacado na próxima parte.
