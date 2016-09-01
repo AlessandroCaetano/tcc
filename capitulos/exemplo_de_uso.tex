@@ -1,17 +1,12 @@
-\chapter{Estudo de Caso}
+\chapter{Exemplo de uso}
 \label{est}
-\section{Software Público Brasileiro}
+\section{O Portal do Software Público Brasileiro}
 \label{est:sof}
 
-O portal do Software Público Brasileiro (SPB) é um espaço virtual, criado em 12 de 
-abril de 2007, que agrega um conjunto de softwares desenvolvidos nas áreas de saúde, 
-educação, saneamento, gestão de TI, TV Digital e Geoprocessamento. Os serviços do
-SPB são acessados não só no Brasil, mas também por outros países como por exemplo:
-Uruguai, Argentina, Portugal, Venezuela, Chile e Paraguai. A politica de compartilhamento
-de software resulta em uma gestão de recursos e gastos de informática mais racionalizada,
-ampliação de parcerias e reforço da politica de software livre no setor público~\cite{spb}.
+O portal do Software Público Brasileiro-SPB é um espaço virtual, criado em 12 de abril de 2007, que agrega um conjunto de softwares desenvolvidos nas áreas de saúde, educação, saneamento, gestão de TI, Geoprocessamento, entre outras. Os serviços do SPB são acessados não só no Brasil, mas também por outros países, como por exemplo: Uruguai, Argentina, Portugal, Venezuela, Chile e Paraguai. A politica de compartilhamento de software resulta em uma gestão mais racionalizada de recursos e gastos em Tecnologia da Informação por parte da Administração Pública Federal. Isso possibilita também, a ampliação de parcerias e reforço da politica de software livre no setor público~\cite{spb}.
 
 O novo Portal do Software Público Brasileiro é composto de:
+
 
 \begin{itemize}
     \item Lista de discussão (Mailman).
@@ -24,28 +19,28 @@ O novo Portal do Software Público Brasileiro é composto de:
     o novo Portal (Colab).
 \end{itemize}
 
+\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Conforme conversamos utilize algumas daquelas figuras que estão na documentação do SPB. Não se esqueça de citar além de explicar figura}
+
+Ver: \url{https://softwarepublico.gov.br/doc/arquitetura.html#servidores-e-servicos}
+
+\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Utilize também a referência teorica que consta no plano de trabalho/desenvolvimento do SPB. Lá tem todas informações formais sobre a organização, objetivos, métodos de gerenciamento/desenvolvimento, organização do ciclo de produção, alinhamento estratégico com os incrementos de produto (releases) ... Esta seção precisa desse tipo de referência. Complemente, altere e adapte}
+
+
+
+
+
+
 \subsection{Metodologia de Desenvolvimento}
 \label{est:sof:met}
 
+\subsubsection{Scrum}
+
+\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{ATENÇÃO! todo esse papo sobre o scrum poderia ir para como um subtópico subseção de planejamento de release. Dá aqui você explicava MUITO resumidamente o XP e o planejamento de releases e sprints, considerando o alinhamento estratégico com o negócio}
+
 O Software Público Brasileiro foi desenvolvido com base no Scrum. O
-Scrum é um framework para o desenvolvimento e manutenção de produtos usado desde
-o incio dos anos 90 que possui a característica de permitir que vários processos
-e tecnicas possam ser empregadas juntamente a ele. Os três valores essenciais do
-Scrum são:
-
-\begin{itemize}
-    \item Leveza.
-    \item Simples de entender.
-    \item Difícil de dominar.
-\end{itemize}
-
-O Scrum é fundamentado nas teorias empíricas de controle de processo, ou seja,
-utiliza o conhecimento vindo de experiencias e das decisões passadas. Por isto, este 
-framework emprega uma abordagem iterativa e incremental para permitir aperfeiçoar
-a previsibilidade e os riscos. No Scrum, cada componente é essencial
-para o sucesso, por isso existem regras especificas para os times, artefatos e
-papéis dentro do framework.
-
+Scrum é um método para gerenciar o desenvolvimento e manutenção de produtos, criado em meados da década de 1990 por \citeonline{Schwaber95scrumdevelopment}. O Scrum é flexível o suficiente para permitir que outros processos, métodos ou práticas possam ser empregados conjuntamente com ele.
+O Scrum se baseia nas teorias empíricas de controle de processo, ou seja,
+se utiliza do conhecimento construído a partir das experiencias e das decisões das pessoas. \cite{Schw01a}
 
 \subsubsection{Práticas do Scrum}
 \label{est:sof:met:pra}
@@ -69,18 +64,24 @@ abaixo apresenta esses eventos e suas respectivas descrições.
         Backlog} e implementados.
 \end{itemize}
 
-\subsection{Organização do Trabalho}
+\subsection{Organização do fluxo de Produção}
 \label{est:sof:org}
 
-O Software Público Brasileiro utiliza o Scrum juntamente com o XP e metodologias
-ágeis para o seu desenvolvimento. Sendo assim, o projeto é dividido em dois níveis,
+\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Pense naquela reestruturação que conversamos sobre o Scrum e XP irem como um subtopico do planemento de release no cap. (de forma bem resumida) 3 O importante nesse caso é apresentar as carcterísticas e dificuldades do planejamento de release e como o scrum e o xp trabalham com o planejamento de release. Assim, aqui você não precisa retormar as definições desses métodos e fica focado em explicar como o SPB foi organizado.}
+
+
+Como métodos de desenvolvimento do SPB, foram utilizadas adaptações do Scrum e do XP, além de práticas de DevOps, mantendo contudo os valores preescritos no manifesto ágil. 
+
+
+
+Sendo assim, o projeto foi dividido em dois níveis,
 o nível operacional e um nível estratégico. Dentro do nível estratégico são definidas
 as metas estratégicas de cada \textit{release}, o período de duração, e as épicas
 de negocio. A medida que desce-se o nível a partir das metas estratégicas e nos
 aproximamos do nível operacional, o grau de granularidade aumenta até chegar a
 micro atividades. Podemos ver essa divisão ocorrendo nas figuras~\ref{fig:epics-diagram} 
 e~\ref{fig:epics-wiki} abaixo, que mostram como essa quebra é feita e como isso acontece 
-na Wiki do projeto.
+na Wiki do projeto. \todo{Lembre-se de arrumar a figura depois que você ler o plano de trabalho do SPB}
 
 \newpage
 \begin{figure}[h]
@@ -96,6 +97,9 @@ na Wiki do projeto.
     \caption{Wiki do SPB com as Métas de Estratégicas e Épicas de Negócio}
     \label{fig:epics-wiki}
 \end{figure}
+
+\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Depois da leitura do alinhamento dos conceitos da organização da produção no SPB, revisite esses parágrafos e faça as devidas correções.}
+
 
 Já dentro do nível operacional existem as histórias de usuário e as atividades.
 Dentro do SPB, as histórias de usuário são tratadas como \textit{milestones} 
@@ -134,6 +138,8 @@ mais facilmente.
 
 \section{Ranqueamento de Páginas no SPB}
 \label{est:ran}
+
+\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Inserir o código-fonte, scripts... como apêndice do documento. e referenciá-los aqui no momento que cada qual é mencionado}
 
 Essa sessão apresenta como o algoritmo de ranqueamento de páginas foi aplicado
 ao Software Público Brasileiro de forma a extrair a relevância das \textit{issues}.

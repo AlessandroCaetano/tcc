@@ -12,23 +12,26 @@ A utilização de experimentação é relativamente recente na área de Engenhar
     \item \textit{Outcome} (Resultado): Resultados da aplicação da intervenção na população.
 \end{itemize}
 
-Assim, neste trabalho os termos da \textit{string} de busca foram assim definidos:
+Considerando os objetivos e as questões de pesquisa apresentadas, na introdutação desta monografia, a estrutura do PICO para este trabalho foi assim definida:
 
 \begin{itemize}
-    \item \textbf{População:} Repositórios de software-livre.
-    \item \textbf{Intervention (Intervenção):} Análise de dados em ambientes de \textit{Big Data} com utilização de algoritmos \textit{Page Ranking} e centralidade de redes em \textit{issues} de repositórios de código.
-    \item \textbf{Comparação:} Não se aplica neste estudo.
-    \item \textbf{Resultado:} Determinar a eficiência da utilização de \textit{Software Analytics} para apoiar decisões de planejamento de release.
+    \item \textbf{População:} Projetos de software-livre.
+    \item \textbf{Intervenção:} Mineração e análise de dados de software por meio de algoritmos de relevância de páginas e centralidade de redes
+    \item \textbf{Comparação:} Não se aplica a este estudo.
+    \item \textbf{Resultado:} Apoiar decisões de planejamento de release em projetos gerenciados por meio de \textit{issues}.
 \end{itemize}
 
 
 De acordo com a estrutura do PICO, os termos que pertencem ao mesmo grupo/conjuntos são agrupados utilizando o operador \textbf{OR} e entre grupos/conjuntos, são agrupadas com o operador \textbf{AND}. Desta forma, a string de busca deste trabalho foi definida como:
+
 
 \begin{center}
         \textit{(REPOSITORIES OR 'FREE SOFTWARE') AND ('DATA ANALYTICS' OR 'SOFTWARE ANALYTICS' OR 'DATA MINING' OR 'PAGE RANKING') AND (RELEASE OR 'RELEASE PLANNING' OR 'SOFTWARE RELEASE PLANNING')}
 \end{center}
 
 A base digital escolhida foi a Scopus. A \textit{string} foi aplicada e os principais artigos que norteaream esta monografia foram recuperados do conjunto de resultados retornado.
+
+Portanto, este primeiro trabalho de conclusão de curso é guiado por uma questão de pesquisa, além de se utilizar de alguns instrumentos do protocolo proposto por \citeonline{guidelines-2007}. Inicialmente será utilizado um projeto de software-livre como exemplo de uso, para explorar a viabilidade do uso das técnicas de mineração e análise sugeridas. 
 
 \section{Tecnologias Utilizadas}
 \label{met:tec}
@@ -52,6 +55,10 @@ Python é uma linguagem de programação dinâmica, interpretada, de alto nível
 
 \section{Estudo de Caso}
 \label{met:est}
+
+\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Aqui continua mencionando e discorrendo sobre o método experimental de estudo de caso. Esse método que será utilizado para validar sua solução entrará no tcc2. Por agora atenha-se a idéia de um exemplo de uso para explorar a viabilidade de sua solução.}
+
+
 O método de pesquisa escolhido para este trabalho foi o estudo de caso. Um estudo de caso é uma investigação experimental que investiga um fenômeno contemporâneo dentro de seu contexto da vida real, em um estudo de caso, os limites entre o fenômeno e o contexto não estão claramente definidos. O fator motivador para a escolha deste método de pesquisa é que ele não requer controle sobre os eventos por parte do pesquisador~\cite{yin}.
 
 O primeiro componente importante para a elaboração de um estudo de caso é a definição de uma questão de pesquisa, conforme definida na sessão~\ref{int:que}. O segundo componente necessário é uma proposição de estudo que deve ser feita com base na questão de pesquisa para que seja possível responde-la, no caso deste trabalho é como podemos relacionar a relevância das \textit{issues} de um projeto com as features, de forma a apoiar decisões de planejamento de \textit{release} . O terceiro ponto do estudo de caso é a unidade de análise, ou seja a definição do 'caso', que, para este trabalho, é o SBP.
