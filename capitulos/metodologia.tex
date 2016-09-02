@@ -16,16 +16,16 @@ Assim, neste trabalho os termos da \textit{string} de busca foram assim definido
 
 \begin{itemize}
     \item \textbf{População:} Repositórios de software-livre.
-    \item \textbf{Intervention (Intervenção):} Análise de dados em ambientes de \textit{Big Data} com utilização de algoritmos \textit{Page Ranking} e centralidade de redes em \textit{issues} de repositórios de código.
+    \item \textbf{Intervention (Intervenção):} Busca, mineração e análise de dados com utilização do algoritmo de \textit{Page Ranking} em \textit{issues} de repositórios de código.
     \item \textbf{Comparação:} Não se aplica neste estudo.
-    \item \textbf{Resultado:} Determinar a eficiência da utilização de \textit{Software Analytics} para apoiar decisões de planejamento de release.
+    \item \textbf{Resultado:} Determinar a eficiência da utilização de algumas das técnicas de \textit{Software Analytics} de forma a apoiar decisões de planejamento de \textit{release}.
 \end{itemize}
 
 
 De acordo com a estrutura do PICO, os termos que pertencem ao mesmo grupo/conjuntos são agrupados utilizando o operador \textbf{OR} e entre grupos/conjuntos, são agrupadas com o operador \textbf{AND}. Desta forma, a string de busca deste trabalho foi definida como:
 
 \begin{center}
-        \textit{(REPOSITORIES OR 'FREE SOFTWARE') AND ('DATA ANALYTICS' OR 'SOFTWARE ANALYTICS' OR 'DATA MINING' OR 'PAGE RANKING') AND (RELEASE OR 'RELEASE PLANNING' OR 'SOFTWARE RELEASE PLANNING')}
+        \textit{(REPOSITORIES OR 'FREE SOFTWARE' OR 'OPEN SOURCE') AND ('DATA ANALYTICS' OR 'SOFTWARE ANALYTICS' OR 'DATA MINING' OR 'PAGE RANKING') AND (RELEASE OR 'RELEASE PLANNING' OR 'SOFTWARE RELEASE PLANNING')}
 \end{center}
 
 A base digital escolhida foi a Scopus. A \textit{string} foi aplicada e os principais artigos que norteaream esta monografia foram recuperados do conjunto de resultados retornado.
@@ -50,14 +50,19 @@ O Gitlab, assim como o Github, é um serviço que provê a utilização do Git c
 \label{met:tec:python}
 Python é uma linguagem de programação dinâmica, interpretada, de alto nível e de  uso geral criada por Guido Van Rossum. Esta linguagem possui estruturas de dados de alto nível, é dinamicamente tipada e é muito atrativa para o desenvolvimento rápido de aplicações e scripts~\cite{python}. Neste trabalho, a linguagem Python foi utilizada para a criação de scripts e a execução do algoritmo de ranqueamento de páginas.
 
+
 \section{Estudo de Caso}
 \label{met:est}
-O método de pesquisa escolhido para este trabalho foi o estudo de caso. Um estudo de caso é uma investigação experimental que investiga um fenômeno contemporâneo dentro de seu contexto da vida real, em um estudo de caso, os limites entre o fenômeno e o contexto não estão claramente definidos. O fator motivador para a escolha deste método de pesquisa é que ele não requer controle sobre os eventos por parte do pesquisador~\cite{yin}.
+
+A pesquisa empírica pode ser realizada de várias formas, e por isto pode ser um desafio saber quais métodos devem ser aplicados a cada caso. Este arcabouço de metodologias, como por exemplo, o estudo de caso, a pesquisa-ação e a \textit{design science research}, dão ao pesquisador diversas opções para trabalhar, funcionando como uma caixa de ferramentas, porém, a escolha certa da metodologia a ser aplicada em grande parte dos casos, não é uma tarefa trivial~\cite{empiricalSoftware}.
+
+Diversos fatores tornam a pesquisa empírica particularmente difícil na engenharia de software, e por este motivo trabalhos como  \cite{shaw} e \cite{empiricalSoftware} foram propostos para ajudar no desenvolvimento da pesquisa neste tópico. Um dos trabalhos mais importantes neste tópico foi proposto por \cite{empiricalSoftware}, e teve como objetivo propor uma estrutura baseada na tomada de decisões para a seleção de estratégias de pesquisa empíricas na engenharia de software.
+
+Um estudo de caso é uma investigação experimental que investiga um fenômeno contemporâneo dentro de seu contexto da vida real, em um estudo de caso, os limites entre o fenômeno e o contexto não estão claramente definidos. O fator motivador para a escolha deste método de pesquisa é que ele não requer controle sobre os eventos por parte do pesquisador~\cite{yin}.
 
 O primeiro componente importante para a elaboração de um estudo de caso é a definição de uma questão de pesquisa, conforme definida na sessão~\ref{int:que}. O segundo componente necessário é uma proposição de estudo que deve ser feita com base na questão de pesquisa para que seja possível responde-la, no caso deste trabalho é como podemos relacionar a relevância das \textit{issues} de um projeto com as features, de forma a apoiar decisões de planejamento de \textit{release} . O terceiro ponto do estudo de caso é a unidade de análise, ou seja a definição do 'caso', que, para este trabalho, é o SBP.
 
-Os próximos componentes do estudo de caso estão relacionados a como os dados das proposições estão unidos e quais são critérios de interpretação das descobertas. Neste estudo, são relacionados dados da Wiki, dos \textit{milestones}, das \textit{issues} e dos comentários dos repositórios de código com a relevância das \textit{issues}, para isto é utilizado como parâmetro o ranque das \textit{issues} para determinar quais delas 
-são mais importantes dentro do espaço amostral.
+Os próximos componentes do estudo de caso estão relacionados a como os dados das proposições estão unidos e quais são critérios de interpretação das descobertas. Neste estudo, são relacionados dados da Wiki, dos \textit{milestones}, das \textit{issues} e dos comentários dos repositórios de código com a relevância das \textit{issues}, para isto é utilizado como parâmetro o ranque das \textit{issues} para determinar quais delassão mais importantes dentro do espaço amostral.
 
 Desta forma, podemos definir os componentes do estudo de caso como os seguintes:
 
