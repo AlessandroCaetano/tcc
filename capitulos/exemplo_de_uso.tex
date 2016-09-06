@@ -1,17 +1,12 @@
-\chapter{Estudo de Caso}
+\chapter{Exemplo de uso}
 \label{est}
-\section{Software Público Brasileiro}
+\section{O Portal do Software Público Brasileiro}
 \label{est:sof}
 
-O portal do Software Público Brasileiro (SPB) é um espaço virtual, criado em 12 de 
-abril de 2007, que agrega um conjunto de softwares desenvolvidos nas áreas de saúde, 
-educação, saneamento, gestão de TI, TV Digital e Geoprocessamento. Os serviços do
-SPB são acessados não só no Brasil, mas também por outros países como por exemplo:
-Uruguai, Argentina, Portugal, Venezuela, Chile e Paraguai. A politica de compartilhamento
-de software resulta em uma gestão de recursos e gastos de informática mais racionalizada,
-ampliação de parcerias e reforço da politica de software livre no setor público~\cite{spb}.
+O portal do Software Público Brasileiro-SPB é um espaço virtual, criado em 12 de abril de 2007, que agrega um conjunto de softwares desenvolvidos nas áreas de saúde, educação, saneamento, gestão de TI, Geoprocessamento, entre outras. Os serviços do SPB são acessados não só no Brasil, mas também por outros países, como por exemplo: Uruguai, Argentina, Portugal, Venezuela, Chile e Paraguai. A politica de compartilhamento de software resulta em uma gestão mais racionalizada de recursos e gastos em Tecnologia da Informação por parte da Administração Pública Federal. Isso possibilita também, a ampliação de parcerias e reforço da politica de software livre no setor público~\cite{spb}.
 
 O novo Portal do Software Público Brasileiro é composto de:
+
 
 \begin{itemize}
     \item Lista de discussão (Mailman).
@@ -25,17 +20,30 @@ O novo Portal do Software Público Brasileiro é composto de:
 \end{itemize}
 
 \subsection{Organização do Trabalho}
+Ver: \url{https://softwarepublico.gov.br/doc/arquitetura.html#servidores-e-servicos}
+\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Utilize também a referência teorica que consta no plano de trabalho/desenvolvimento do SPB. Lá tem todas informações formais sobre a organização, objetivos, métodos de gerenciamento/desenvolvimento, organização do ciclo de produção, alinhamento estratégico com os incrementos de produto (releases) ... Esta seção precisa desse tipo de referência. Complemente, altere e adapte}
+
+
+
+
+
+
+\subsection{Metodologia de Desenvolvimento}
+
+
+\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{ATENÇÃO! todo esse papo sobre o scrum poderia ir para como um subtópico subseção de planejamento de release. Dá aqui você explicava MUITO resumidamente o XP e o planejamento de releases e sprints, considerando o alinhamento estratégico com o negócio}
+
+O Software Público Brasileiro foi desenvolvido com base no Scrum. O
+Scrum é um método para gerenciar o desenvolvimento e manutenção de produtos, criado em meados da década de 1990 por \citeonline{Schwaber95scrumdevelopment}. O Scrum é flexível o suficiente para permitir que outros processos, métodos ou práticas possam ser empregados conjuntamente com ele.
+O Scrum se baseia nas teorias empíricas de controle de processo, ou seja, se utiliza do conhecimento construído a partir das experiencias e das decisões das pessoas. \cite{Schw01a}
+
+\subsection{Organização do fluxo de Produção}
 \label{est:sof:org}
 
-O Software Público Brasileiro utiliza o Scrum juntamente com o XP e metodologias
-ágeis para o seu desenvolvimento. Sendo assim, o projeto é dividido em dois níveis,
-o nível operacional e um nível estratégico. Dentro do nível estratégico são definidas
-as metas estratégicas de cada \textit{release}, o período de duração, e as épicas
-de negocio. A medida que desce-se o nível a partir das metas estratégicas e nos
-aproximamos do nível operacional, o grau de granularidade aumenta até chegar a
-micro atividades. Podemos ver essa divisão ocorrendo nas figuras~\ref{fig:epics-diagram} 
-e~\ref{fig:epics-wiki} abaixo, que mostram como essa quebra é feita e como isso acontece 
-na Wiki do projeto.
+Como métodos de desenvolvimento do SPB, foram utilizadas adaptações do Scrum e do XP, além de práticas de DevOps, mantendo contudo os valores preescritos no manifesto ágil. 
+
+Sendo assim, o projeto foi dividido em dois níveis, o nível operacional e um nível estratégico. Dentro do nível estratégico são definidas
+as metas estratégicas de cada \textit{release}, o período de duração, e as épicas de negocio. A medida que desce-se o nível a partir das metas estratégicas e nos aproximamos do nível operacional, o grau de granularidade aumenta até chegar a micro atividades. Podemos ver essa divisão ocorrendo nas figuras~\ref{fig:epics-diagram} e~\ref{fig:epics-wiki} abaixo, que mostram como essa quebra é feita e como isso acontece na Wiki do projeto. \todo{Lembre-se de arrumar a figura depois que você ler o plano de trabalho do SPB}
 
 \newpage
 \begin{figure}[h]
@@ -52,15 +60,10 @@ na Wiki do projeto.
     \label{fig:epics-wiki}
 \end{figure}
 
-Já dentro do nível operacional existem as histórias de usuário e as atividades.
-Dentro do SPB, as histórias de usuário são tratadas como \textit{milestones} 
-e as atividades como \textit{issues} do Gitlab. Dentro de uma \textit{sprint}
-cada time escolhe uma ou mais  histórias, do backlog da release, e realiza a divisão
-de suas atividades entre seus membros. A utilização da ferramenta Gitlab permite
-que as atividades possam ser comentadas e acompanhadas pelos usuários, facilitando,
-desta forma, o acompanhamento do projeto tanto por parte do Ministério do Planejamento
-Orçamento e Gestão e dos desenvolvedores. As imagens~\ref{fig:milestone} e~\ref{fig:issue}
-abaixo mostram a estrutura de uma história e de uma atividade.
+\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Depois da leitura do alinhamento dos conceitos da organização da produção no SPB, revisite esses parágrafos e faça as devidas correções.}
+
+
+Já dentro do nível operacional existem as histórias de usuário e as atividades. Dentro do SPB, as histórias de usuário são tratadas como \textit{milestones}  e as atividades como \textit{issues} do Gitlab. Dentro de uma \textit{sprint} cada time escolhe uma ou mais  histórias, do backlog da release, e realiza a divisão de suas atividades entre seus membros. A utilização da ferramenta Gitlab permite que as atividades possam ser comentadas e acompanhadas pelos usuários, facilitando, desta forma, o acompanhamento do projeto tanto por parte do Ministério do PlanejamentoOrçamento e Gestão e dos desenvolvedores. As imagens~\ref{fig:milestone} e~\ref{fig:issue} abaixo mostram a estrutura de uma história e de uma atividade.
 
 \newpage
 \begin{figure}[h]
@@ -78,42 +81,21 @@ abaixo mostram a estrutura de uma história e de uma atividade.
     \label{fig:issue}
 \end{figure}
 
-A escolha do SPB como um caso piloto foi estratégica, visto que é um projeto de 
-domínio público e utilizando o Gitlab, é possível exportar informações de
-desenvolvedores, atividades, histórias e épicas, além disto é possível extrair
-informações especificas relacionadas ao código fonte do projeto. Sem este tipo
-de acesso a informação seria praticamente impossível a execução deste experimento.
-Outro fator determinante é a forma com o que o SPB concentra o planejamento de release
-dentro da repositório, o permite com que a relação entre as atividades seja evidenciada
-mais facilmente.
+A escolha do SPB como um caso piloto foi estratégica, visto que é um projeto de domínio público e utilizando o Gitlab, é possível exportar informações de desenvolvedores, atividades, histórias e épicas, além disto é possível extrair informações especificas relacionadas ao código fonte do projeto. Sem este tipo de acesso a informação seria praticamente impossível a execução deste experimento. Outro fator determinante é a forma com o que o SPB concentra o planejamento de release dentro da repositório, o permite com que a relação entre as atividades seja evidenciada mais facilmente.
 
 \section{Ranqueamento de Páginas no SPB}
 \label{est:ran}
 
-Essa sessão apresenta como o algoritmo de ranqueamento de páginas foi aplicado
-ao Software Público Brasileiro de forma a extrair a relevância das \textit{issues}.
-Como foi dita na sessão~\ref{est:sof:org}, a escolha deste projeto para o estudo de caso
-foi estratégica de forma a facilitar a execução deste experimento, já que o SPB possui 
-estrutura e condições favoráveis a isso.
+\todo[inline, backgroundcolor=yellow!20!white, bordercolor=red]{Inserir o código-fonte, scripts... como apêndice do documento. e referenciá-los aqui no momento que cada qual é mencionado}
+
+Essa sessão apresenta como o algoritmo de ranqueamento de páginas foi aplicado ao Software Público Brasileiro de forma a extrair a relevância das \textit{issues}. Como foi dita na sessão~\ref{est:sof:org}, a escolha deste projeto para o estudo de caso foi estratégica de forma a facilitar a execução deste experimento, já que o SPB possui  estrutura e condições favoráveis a isso.
 
 \subsection{Vértices e Arestas}
 \label{est:ran:ver}
 
-Como foi visto na sessão~\ref{ref:ran} a utilização do algoritmo de ranqueamento
-de páginas depende que inicialmente exista um grafo direcionado.\footnote{Um grafo direcionado, 
-ou dígrafo, $D$ consiste de um conjunto finito de elementos não vazios $V(D)$
-chamados de vértices e um conjunto finito $A(D)$ de pares ordenados de vértices
-distintos chamados arcos. Desta forma, $V(D)$ é chamado de conjunto de vértices e
-$A(D)$ o conjunto de arcos de $D$~\cite{bang}.}
+Como foi visto na sessão~\ref{ref:ran} a utilização do algoritmo de ranqueamento de páginas depende que inicialmente exista um grafo direcionado.\footnote{Um grafo direcionado, ou dígrafo, $D$ consiste de um conjunto finito de elementos não vazios $V(D)$ chamados de vértices e um conjunto finito $A(D)$ de pares ordenados de vértices distintos chamados arcos. Desta forma, $V(D)$ é chamado de conjunto de vértices e $A(D)$ o conjunto de arcos de $D$~\cite{bang}.}
 
-Para que um grafo do SPB fosse gerado, foi utilizada a API do Gitlab juntamente
-com um \textit{script Python} para que todas as \textit{issues}, \textit{milestones} e
-comentários fosse exportado em formato JSON. Como foi dito, o algoritmo de
-ranqueamento de páginas precisa de um dígrafo para ser executado, uma das adaptações
-deste \textit{script} é que em alguns casos os grafos gerados não eram direcionados,
-e por isto, estes grafos tiveram que ser convertidos em grafos direcionados substituindo
-cada um dos arcos ou arestas por um arco de entrada e um de saída, este processo pode
-ser visto nas figuras~\ref{fig:undirected} e~\ref{fig:directed}.
+Para que um grafo do SPB fosse gerado, foi utilizada a API do Gitlab juntamente com um \textit{script Python} para que todas as \textit{issues}, \textit{milestones} e comentários fosse exportado em formato JSON. Como foi dito, o algoritmo de ranqueamento de páginas precisa de um dígrafo para ser executado, uma das adaptações deste \textit{script} é que em alguns casos os grafos gerados não eram direcionados, e por isto, estes grafos tiveram que ser convertidos em grafos direcionados substituindo cada um dos arcos ou arestas por um arco de entrada e um de saída, este processo pode ser visto nas figuras~\ref{fig:undirected} e~\ref{fig:directed}.
 
 \begin{figure}[h]
     \centering
@@ -133,11 +115,7 @@ ser visto nas figuras~\ref{fig:undirected} e~\ref{fig:directed}.
 \subsubsection{Issues}
 \label{est:ran:iss}
 
-Como o foco do estudo é analisar a relevância das \textit{issues}, o dígrafo 
-foi gerado com base nelas. Dentro do grafo, cada \textit{issue} foi tratada
-como um vértice, e as arestas eram formadas a medida que uma \textit{issue}
-era marcada, através de comentários ou eventos, dentro de outra. A figura
-~\ref{fig:issue-comment} exemplifica esse processo.
+Como o foco do estudo é analisar a relevância das \textit{issues}, o dígrafo foi gerado com base nelas. Dentro do grafo, cada \textit{issue} foi tratada como um vértice, e as arestas eram formadas a medida que uma \textit{issue} era marcada, através de comentários ou eventos, dentro de outra. A figura~\ref{fig:issue-comment} exemplifica esse processo.
 
 \begin{figure}[h]
     \centering
@@ -146,10 +124,7 @@ era marcada, através de comentários ou eventos, dentro de outra. A figura
     \label{fig:issue-comment}
 \end{figure}
 
-Para a realização deste processo foram analisados os comentários de todas as 879
-\textit{issues} no repositório do SPB. O dígrafo gerado por esse processo, foi
-então utilizado para a aplicação do algoritmo de ranqueamento de páginas, a figura
-~\ref{fig:issue-graph} demonstra como esse grafo se apresenta.
+Para a realização deste processo foram analisados os comentários de todas as 879 \textit{issues} no repositório do SPB. O dígrafo gerado por esse processo, foi então utilizado para a aplicação do algoritmo de ranqueamento de páginas, a figura ~\ref{fig:issue-graph} demonstra como esse grafo se apresenta.
 
 \begin{figure}[h]
     \centering
@@ -162,13 +137,7 @@ então utilizado para a aplicação do algoritmo de ranqueamento de páginas, a 
 \subsubsection{Milestones}
 \label{est:ran:mil}
 
-Dentro do projeto SPB, um \textit{milestone} é uma história com um conjunto de 
-\textit{issues} associadas. Para que fosse possível uma maior aproximação com
-o ranqueamento de páginas considerou-se que todas as \textit{issues} dentro de
-um \textit{milestones} estão interligadas, de forma que elas formem um grafo completo,
-essa abstração pode ser vista na figura~\ref{fig:milestone-graph}.
-\footnote{Um grafo $G$ é considerado como completo se cada par de vértices distintos em $G$
-são adjacentes~\cite{bang}.}
+Dentro do projeto SPB, um \textit{milestone} é uma história com um conjunto de \textit{issues} associadas. Para que fosse possível uma maior aproximação com o ranqueamento de páginas considerou-se que todas as \textit{issues} dentro de um \textit{milestones} estão interligadas, de forma que elas formem um grafo completo, essa abstração pode ser vista na figura~\ref{fig:milestone-graph}.\footnote{Um grafo $G$ é considerado como completo se cada par de vértices distintos em $G$ são adjacentes~\cite{bang}.}
 
 \newpage
 \begin{figure}[h]
