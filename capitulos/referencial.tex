@@ -8,17 +8,24 @@ Na literatura não existe um consenso da definição de \textit{Software Analyti
 
 Hoje é comum empresas como Google, Facebook e Microsoft aplicarem métodos de análise de dados diariamente em seus projetos e produtos. Além disso, o número de conferências interessadas nos assuntos de mineração e análise de artefatos de software cresceu, destacando-se duas, a\textit{Mining Software Repositories} (MSR) e a \textit{PROMISE Conference on Repeatable Experimentes in Software Engineering}. Cada uma possui um foco diferente, sendo a MSR preocupada com a coleta dos dados, enquanto que a PROMISE com a eficácia e repetibilidade da análise de dados.
 
-\subsection{Projetos \textit{Open Source} e Software Analytics}
+Diversos autores propõem soluções que utilizam técnicas de \textit{Software Analytics} para ajudar na tomada de decisões em projetos de software. Czerwonka, por exemplo, propôs a plataforma de análise \textit{CODEMINE} depois de observar \textit{inputs}, \textit{outputs} e dados de ferramentas de diversos times na Microsoft. O \textit{CODEMINE} fornece informações de diversos artefatos de software, entre eles: \textit{milestones}, código fonte, \textit{bugtrackers} e outros o que permite que novas pesquisas sejam desenvolvidas neste contexto \protect \cite{softwarePrac}. Já Baysal, propôs a utilização de um \textit{dashboard} como uma ferramenta complementar ao \textit{Bugzilla} para os times de desenvolvimento da Mozilla. Desta forma, os desenvolvedores podiam ter informações mais detalhadas a respeito de \textit{patches}, comentários e \textit{bugs} reportados, auxiliando na tomada de decisões no dia-a-dia \protect \cite{softwarePrac}.
 
-A análise de dados obtidos de ferramentas de versionamento de código, como o Git, Bazaar, Subversion ou CVS pode trazer informações importantes a respeito da evolução de um projeto de software, por exemplo: o nível de engajamento dos desenvolvedores; o número de defeitos; a qualidade interna do produto; resultados de execução de testes, entre outros\cite{artAndScience}. O Github, uma das ferramentas mais utilizadas de versionamento de código-fonte atualmente, fornece uma API que permite a extração de dois tipos de dados:
+\subsection{Projetos de Software Livre e Software Analytics}
+\label{ref:sof:sl}
+A análise de dados obtidos de ferramentas de versionamento de código, como o Git, Bazaar, Subversion ou CVS pode trazer informações importantes a respeito da evolução de um projeto de software, por exemplo: o nível de engajamento dos desenvolvedores; o número de defeitos; a qualidade interna do produto; resultados de execução de testes, entre outros\cite{artAndScience}. 
+
+O Github é o maior repositório de software do mundo. Além dos serviços de gerenciamento de código padrões presentes em um sistema baseado em git(\textit{push, commit, pull, clone, fork}), o Github também fornece uma maneira dos desenvolvedores de um projeto interagirem através de \textit{features} de uma rede social. Por exemplo, um desenvolvedor que aprecia um projeto pode marca-lo com uma estrela, de forma que as estrelas de um projeto são um indicador de sua popularidade. Alguns dos projetos mais populares hoje no Github são: JQUERY/JQUERY que é uma biblioteca de \textit{scripting} para HTML, TORVALDS/Linux o projeto do \textit{kernel} do Linux, RAILS/RAILS um framework para a linguagem Ruby e o DOCKER/DOCKER que é um motor de contêineres para aplicações~\cite{githubPop}. 
+
+Devida a alta popularidade do Github, ele é largamente usado para a realização de pesquisas e mineração de dados. Por exemplo, Zho et al. mostra que a adoção de pastas com nomes padrão (\textit{doc, test, examples}) em projetos pode ter um impacto na popularidade do projeto. Já em outro estudo Aggarwal et al. mostra que projetos com uma alta popularidade atraem mais pessoas que queiram contribuir com a \textit{Wiki} e documentação~\cite{githubPop}.
+
+Para que fosse possível a realização destes estudos foi necessário que os repositórios fossem abertos, e que fosse utilizada a API do Github. A API fornecida pelo Github é um ponto de acesso comum por onde é possível extrair informações de repositórios públicos, essas informações podem estar divididas em dois grandes grupos:
 
 \begin{itemize}
     \item \textbf{Metadados:} Os metadados fornecidos são informações associadas a cada \textit{commit} ou \textit{issue}, são: criador(a), data, mensagem do \textit{commit} ou \textit{issue}, a \textit{branch}, o repositório, e o escopo do \textit{commit} ou \textit{issue}. Além disso, na mensagem do \textit{commit} podem haver referencias a outros desenvolvedores, defeitos ou outros \textit{commits} e \textit{issues}.
     \item \textbf{Snapshots:} O código fonte do projeto, que pode ser obtido em diferentes fases do desenvolvimento, já que a ferramente permite que um usuário avance ou retroceda dentro dos \textit{commits}. Desta forma, é possível analisar o código de um projeto referente em vários períodos diferentes.
 \end{itemize}
 
-Abaixo, na figura~\ref{fig:github_api}, podemos ver o digrama de classes da API fornecida pelo Github, com base nesta imagem, é possível ver que as \textit{issues} e informações dos \textit{commiters} são exportadas a partir de um ponto comum de acesso.
-
+Abaixo, na Figura~\ref{fig:github_api}, podemos ver o digrama de classes da API fornecida pelo Github, com base nesta imagem, é possível ver que as \textit{issues} e informações dos \textit{commiters} são exportadas a partir de um ponto comum de acesso.
 \newpage
 \begin{figure}[!h]
     \centering
@@ -27,49 +34,14 @@ Abaixo, na figura~\ref{fig:github_api}, podemos ver o digrama de classes da API 
     \label{fig:github_api}
 \end{figure}
 
-\section{Desenvolvimento Ágil em Projetos \textit{Open Source}}
-\label{red:des}
-
-\subsection{Scrum}
-O Scrum é um \textit{framework} para o desenvolvimento e manutenção de produtos usado desde o incio dos anos 90 que possui a característica de permitir que vários processos e técnicas possam ser empregadas juntamente a ele. Os três valores essenciais do Scrum são:
-
-\begin{itemize}
-    \item Leveza.
-    \item Simples de entender.
-    \item Difícil de dominar.
-\end{itemize}
-
-O Scrum é fundamentado nas teorias empíricas de controle de processo, ou seja, utiliza o conhecimento vindo de experiencias e das decisões passadas. Por isto, este  \textit{framework} emprega uma abordagem iterativa e incremental para permitir aperfeiçoar a previsibilidade e os riscos. No Scrum, cada componente é essencial para o sucesso, por isso existem regras especificas para os times, artefatos e papéis dentro do \textit{framework}~\cite{scrum}.
-
-\subsubsection{Práticas do Scrum}
-\label{est:sof:met:pra}
-
-O Scrum define algumas práticas que são aplicadas durante o desenvolvimento com o objetivo de minimizar a necessidade de reuniões. Estas práticas podem ser eventos com uma duração definida e buscam aumentar as interações entre as pessoas. A lista abaixo apresenta esses eventos e suas respectivas descrições~\cite{scrum}.
-
-\begin{itemize}
-    \item \textbf{Sprint:} Um intervalo de tempo em que são desenvolvidos os itens propostos. Este intervalo geralmente é de duas a quatro semanas e ao final de cada \textit{sprint}, um incremento de software é entregue.
-    \item \textbf{Sprint Review:} Ao final de cada \textit{sprint} o time revisa as atividades realizadas durante o período em que a \textit{sprint} ocorreu. São levantados pontos de melhoria e quais foram os pontos fortes do time.
-    \item \textbf{Sprint Planning:} No inicio de cada \textit{sprint}, é feita uma reunião em que são priorizadas as atividades que serão realizadas.
-    \item \textbf{Product Backlog:} Conjunto de itens que serão desenvolvidos no projeto. A cada \textit{sprint} um conjunto de itens são escolhidos, retirados do \textit{Product Backlog} e implementados.
-\end{itemize}
-
-\subsection{\textit{Extremme Programming}}
-
-O \textit{Extremme Programming}, ou XP, é um dos vários processos ágeis para desenvolvimento de \textit{software} existentes. O primeiro 
-
-
-
 \section{Centralidade de Redes e o Ranqueamento de Páginas}
-\label{ref:ran}
-
-\subsection{Centralidade}
-\label{ref:ran:cen}
-Centralidade é um dos tópicos mais estudados na teoria dos grafos, sendo um tópico de grande importância em estudos de redes sociais~\cite{networks}. Ela determina o grau de importância de um vértice dentre todos os outros dentro de uma rede. Na figura \ref{fig:centrality} é ilustrado um exemplo de centralidade. O conceito de centralidade de redes já foi aplicado a diversos contextos, dentre eles: investigar a influencia de redes inter organizacionais, estudos de relevância, vantagens em redes de troca, competência em organizações formais, oportunidades de emprego e diversos outros campos do mercado e ciência\cite{centrality}.
+\label{ref:cen}
+Centralidade é um dos tópicos mais estudados na teoria dos grafos, sendo um tópico de grande importância em estudos de redes sociais~\cite{networks}. Ela determina o grau de importância de um vértice dentre todos os outros dentro de uma rede. Na Figura \ref{fig:centrality} é ilustrado um exemplo de centralidade. O conceito de centralidade de redes já foi aplicado a diversos contextos, dentre eles: investigar a influencia de redes inter organizacionais, estudos de relevância, vantagens em redes de troca, competência em organizações formais, oportunidades de emprego e diversos outros campos do mercado e ciência\cite{centrality}.
 
 \begin{figure}[!h]
     \centering
         \includegraphics[keepaspectratio=true,scale=0.5]{figuras/centrality.eps}
-    \caption{Exemplo de Relevância de um Nó em uma Rede, extraída de \cite{muppidi}.}
+    \caption{Exemplo de Relevância de um Nó em uma Rede, extraída de \protect \cite{muppidi}.}
     \label{fig:centrality}
 \end{figure}
 
@@ -87,10 +59,10 @@ A partir destas ideias discutidas a respeito de centralidade, pretende-se modela
 
 Ao longo dos anos, diferentes métodos de medida de centralidade foram criados, entre eles: Centralidade de Grau, Proximidade \textit{(Closeness)}, Intermediação \textit{(Betweenness)}, Autovetor \textit{(Eigen Vector)}, Informação, Intermediação de Fluxo, \textit{Rush Index}, Medidas de Influencia de Katz, Hubbell, Hoede e Taylor~\cite{centrality}. Estes métodos diferem nas suposições iniciais que fazem para alcançar o objetivo de determinar o nó com maior importância, por exemplo, o algoritmo de Freeman de proximidade e intermediação conta apenas os caminhos geodésicos entre os nós, assumindo que qualquer fluxo que percorra uma rede, siga sempre pelo caminho mais curto. Outros algoritmos como a centralidade de autovetor de Bonacich conta travessias, o que assume que as trajetórias podem ser sinuosas, atravessando nós e arestas repetidas vezes até chegar ao destino~\cite{Bonacich87}.
 
-A partir de todos estes métodos discutidos por~\cite{ceflow},~\cite{centrality} e~\cite{Bonacich87}, foi escolhido um algoritmo para ser aplicado no exemplo de uso realizado nesta primeira etapa da monografia. O algoritmo escolhido foi o \textit{Page Ranking}, ou algoritmo de ranqueamento de paginas, a escolha deste algoritmo deu-se ao fato de ser um dos algoritmos mais utilizados no calculo de relevância e ser largamente estudado \cite{brin}, o que inclui pesquisas como a realizada por \cite{muppidi} que realiza uma comparação entre os algoritmos de ranqueamento contemporâneos. A próxima seção deste capitulo apresenta a fundamentação teórica a respeito do algoritmo de ranqueamento de páginas
+A partir de todos estes métodos discutidos por~\cite{centrality} e \protect \cite{Bonacich87}, foi escolhido um algoritmo para ser aplicado no exemplo de uso realizado nesta primeira etapa da monografia. O algoritmo escolhido foi o \textit{Page Ranking}, ou algoritmo de ranqueamento de paginas, a escolha deste algoritmo deu-se ao fato de ser um dos algoritmos mais utilizados no calculo de relevância e ser largamente estudado \cite{brin}, o que inclui pesquisas como a realizada por \cite{muppidi} que realiza uma comparação entre os algoritmos de ranqueamento contemporâneos. A próxima seção deste capítulo apresenta a fundamentação teórica a respeito do algoritmo de ranqueamento de páginas
 
 \subsection{Ranqueamento de Páginas}
-\label{ref:ran:pag}
+\label{ref:cen:pag}
 O algoritmo de ranqueamento de páginas foi criado por Larry Page e Sergey em 1996. Ele permite calcular a importância relativa de páginas da web e tem aplicações em mecanismos de busca, estimativas de trafego e navegação na web. O algoritmo foi criado com o intuito de prover uma solução de busca de informações na web a partir da estrutura dos links, usada no hipertexto da web. \cite{pageRank}.
 
 A premissa do algoritmo de ranqueamento de páginas é que cada página na web possui um número de \textit{links} de saída e de entrada, e que páginas com um grande número de \textit{links} são mais importantes do que as com poucos \textit{links}. Além disso, o algoritmo também leva em consideração a relevância dos \textit{links} de entrada de uma página, ou seja, se uma página da web possui um \textit{link} de entrada que possui uma alta relevância, essa página tende a ser mais importante que outra que possua vários \textit{links} mas que vieram de páginas menos relevantes.
@@ -112,32 +84,32 @@ A função de ranqueamento de páginas não ranqueia um \textit{web-site} por co
 
 Depois deste primeiro passo, a soma do \textit{page rank} $PR(y)$ é multiplicada por um fator de amortecimento $\alpha$. Este fator representa a probabilidade de um pulo aleatório em uma determinada página, ou seja, a probabilidade de que uma pessoa que esteja surfando na \textit{web}, e esteja em uma pagina $y$ clique em qualquer um dos \textit{links} desta página. A probabilidade de que uma pessoa clique em um dos \textit{links} de uma página é puramente baseada no número de \textit{links} da página, e a probabilidade que ela chegue em uma página específica é a soma das probabilidades de cada \textit{link} que a pessoa teve que seguir para chegar a ela. Por se tratar de uma probabilidade, o $\alpha$ assume valores entre 0 e 1, porém para muitos casos é sugerido o uso de 0.85~\cite{pageRank}. 
 
-Na figura~\ref{fig:page_rank} é apresentado um exemplo como a relevância de uma página influencia as páginas seguintes.
+Na Figura~\ref{fig:page_rank} é apresentado um exemplo como a relevância de uma página influencia as páginas seguintes.
 
 \begin{figure}[!h]
     \centering
         \includegraphics[keepaspectratio=true,scale=0.5]{figuras/page_rank.eps}
-    \caption{Simplificação do Cálculo de Ranqueamento de Páginas, extraída de \cite{pageRank}.}
+    \caption{Simplificação do Cálculo de Ranqueamento de Páginas, extraída de \protect \cite{pageRank}.}
     \label{fig:page_rank}
 \end{figure}
 
 \begin{figure}[!h]
     \centering
         \includegraphics[keepaspectratio=true,scale=0.5]{figuras/page_rank2.eps}
-    \caption{Simplificação do Cálculo de Ranqueamento de Páginas, extraída de \cite{pageRank}.}
+    \caption{Simplificação do Cálculo de Ranqueamento de Páginas, extraída de \protect \cite{pageRank}.}
     \label{fig:page_rank2}
 \end{figure}
 
-A figura~\ref{fig:page_rank} ilustra como o ranqueamento de páginas se divide através das paginas e como ele contribui para o ranque das páginas seguintes. Na figura~\ref{fig:page_rank} é possível ver como uma página que possui um \textit{page rank} acumulado de 100 distribui seu ranque igualmente para as paginas seguintes, de forma que cada um dos seus dois \textit{links} receba 50 de ranque. Já em umá página que possui 9 de ranque acumulado, distribui igualmente 3 de ranque para cada um dos seus 3 \textit{links} subsequentes. Na figura~\ref{fig:page_rank2} é ilustrado como um estado estável pode ser alcançado depois que o algoritmo é executado em um conjunto de páginas, de forma que o ranque de uma página seja distribuído igualmente para as páginas posteriores a ela. 
+A Figura~\ref{fig:page_rank} ilustra como o ranqueamento de páginas se divide através das paginas e como ele contribui para o ranque das páginas seguintes. Na Figura~\ref{fig:page_rank} é possível ver como uma página que possui um \textit{page rank} acumulado de 100 distribui seu ranque igualmente para as paginas seguintes, de forma que cada um dos seus dois \textit{links} receba 50 de ranque. Já em umá página que possui 9 de ranque acumulado, distribui igualmente 3 de ranque para cada um dos seus 3 \textit{links} subsequentes. Na Figura~\ref{fig:page_rank2} é ilustrado como um estado estável pode ser alcançado depois que o algoritmo é executado em um conjunto de páginas, de forma que o ranque de uma página seja distribuído igualmente para as páginas posteriores a ela. 
 
 \begin{figure}[!h]
     \centering
         \includegraphics[keepaspectratio=true,scale=0.5]{figuras/page_rank3.eps}
-    \caption{\textit{Loop} de Ranqueamento, extraída de \cite{pageRank}.}
+    \caption{\textit{Loop} de Ranqueamento, extraída de \protect \cite{pageRank}.}
     \label{fig:page_rank3}
 \end{figure}
 
-Um dos problemas dessa função de ranqueamento, é que caso duas páginas da web que apontem uma para outra, e uma terceira aponte para qualquer uma destas, o \textit{loop} vai acumular ranque porém, nunca vai distribuir isso para nenhuma outra página seguinte. Na ilustração apresentada na figura~\ref{fig:page_rank3}, possível observar esse fenômeno.
+Um dos problemas dessa função de ranqueamento, é que caso duas páginas da web que apontem uma para outra, e uma terceira aponte para qualquer uma destas, o \textit{loop} vai acumular ranque porém, nunca vai distribuir isso para nenhuma outra página seguinte. Na ilustração apresentada na Figura~\ref{fig:page_rank3}, possível observar esse fenômeno.
 
-\section{Considerações Finais do Capitulo}
-Neste capitulo foi apresentado o referencial teórico a respeito dos tópicos de \textit{Software Analytics}, Centralidade e o algoritmo \textit{Page Ranking}. No próximo capitulo será apresentado como estas técnicas foram utilizadas para que fosse possível executar o exemplo de uso que faz parte desta monografia e alguns resultados colhidos a partir deste exemplo.
+\section{Considerações Finais do Capítulo}
+Neste capítulo foi apresentado o referencial teórico a respeito dos tópicos de \textit{Software Analytics}, Centralidade e o algoritmo \textit{Page Ranking}. No próximo capítulo é apresentada a metodologia utilizada neste estudo, passando primeiramente pela definição da população de estudo, depois as técnicas de intervenção que devem ser aplicadas e, finalmente, como a análise dos dados deve ser feita ao final desta primeira etapa da monografia.

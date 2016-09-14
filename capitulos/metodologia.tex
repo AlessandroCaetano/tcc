@@ -1,9 +1,7 @@
 \chapter{Metodologia}
 \label{met}
-\section{Metodologia de Pesquisa}
-\label{met:pes}
 
-A utilização de experimentação é relativamente recente na área de Engenharia de Software. Um dos trabalhos seminais nessa área foi proposto por \citeonline{guidelines-2007}, e teve o objetivo de estabelecer um guia para se realizar revisões sistemáticas da literatura. Nesta monografia foram utilizados alguns elementos da estrutura do protocolo proposto por \citeonline{guidelines-2007} de forma a sistematizar a busca por estudos que orientassem esse trabalho. Um dos elementos previstos no protocolo, e que foi utilizado nesta monografia, é a composição de uma \textit{string} de busca em bases digitais, originalmente proposto na área de medicina, o PICO. \cite{citeulike:10757239} Trata-se de uma abstratação proposta para agrupar conjuntos de termos e auxiliar a composição da \textit{string} de busca a ser submetida às bases. Segundo a adaptação proposta, o PICO procura organizar:
+A utilização de experimentação é relativamente recente na área de Engenharia de Software. Um dos trabalhos seminais nessa área foi proposto por \citeonline{guidelines-2007}, e teve o objetivo de estabelecer um guia para se realizar revisões sistemáticas da literatura. Nesta monografia foram utilizados alguns elementos da estrutura do protocolo proposto por \citeonline{guidelines-2007} de forma a sistematizar a busca por estudos que orientassem esse trabalho. Um dos elementos previstos no protocolo, e que foi utilizado nesta monografia, é a composição de uma \textit{string} de busca em bases digitais, originalmente proposto na área de medicina, o PICO. \cite{citeulike:10757239} Trata-se de uma abstração proposta para agrupar conjuntos de termos e auxiliar a composição da \textit{string} de busca a ser submetida às bases. Segundo a adaptação proposta, o PICO procura organizar:
 
 \begin{itemize}
     \item \textit{Population} (População): A população que o estudo será aplicado, no contexto de engenharia de software pode ser: uma determinada função (Desenvolvedores, Gerentes, Usuários), categoria de engenheiro de software (Iniciante, Junior, Senior), uma área de aplicação, ou um setor da industria.
@@ -12,75 +10,49 @@ A utilização de experimentação é relativamente recente na área de Engenhar
     \item \textit{Outcome} (Resultado): Resultados da aplicação da intervenção na população.
 \end{itemize}
 
-Considerando os objetivos e as questões de pesquisa apresentadas, na introdutação desta monografia, a estrutura do PICO para este trabalho foi assim definida:
+Considerando os objetivos e as questões de pesquisa apresentadas, na introdução desta monografia, a estrutura do PICO para este trabalho foi assim definida:
 
 \begin{itemize}
     \item \textbf{População:} Repositórios de software-livre.
     \item \textbf{Intervention (Intervenção):} Busca, mineração e análise de dados com utilização do algoritmo de \textit{Page Ranking} em \textit{issues} de repositórios de código.
-    \item \textbf{Comparação:} Não se aplica a este estudo.
+    \item \textbf{Comparação:} Não se aplica a este estudo pois o exemplo de uso construído não visa a comparação com alguma técnica já conhecida de priorização de atividades.
     \item \textbf{Resultado:} Determinar a eficiência da utilização de algumas das técnicas de \textit{Software Analytics} de forma a apoiar decisões de planejamento de \textit{release}.
 \end{itemize}
 
+\section{Definição da População}
+\label{met:def}
+A população deste estudo foi definida como repositórios de software-livre, mais especificamente aqueles repositórios hospedados na plataforma Github. Como foi discutido na Seção~\ref{ref:sof:sl} esta plataforma, apesar de não ser livre, é a mais popular do mundo e hoje hospeda cerca de 38 milhões de projetos de software. Além disto, outros estudos como o realizado por~\citeonline{githubPop} mostram como essa plataforma pode ser utilizada para a busca e mineração de informação.
 
-De acordo com a estrutura do PICO, os termos que pertencem ao mesmo grupo/conjuntos são agrupados utilizando o operador \textbf{OR} e entre grupos/conjuntos, são agrupadas com o operador \textbf{AND}. Desta forma, a string de busca deste trabalho foi definida como:
+Além da popularidade dominante do Github em relação a outras plataformas baseadas em Git, outro dos fatores que direcionaram a escolha desta ferramenta como população é a existência da API também discutida na Seção~\ref{ref:sof:sl}. Através desta solução é possível extrair informações diversas dos repositórios no Github, entre elas podemos citar: \textit{commits}, contribuidores, comentários, trechos de código, \textit{wiki}, \textit{milestones} e \textit{issues}. Esta API também torna possível a extração de dados do repositório como número de estrelas concedidas por outros desenvolvedores, número de \textit{forks} e qual a linguagem em que o projeto está sendo desenvolvido.
 
+Como a API do Github pode fornecer informações de \textit{issues}, \textit{milestones} e da \textit{wiki} de um repositório, e esta monografia deve se limitar a analisar estas informações, ela deve ser utilizada para isto. Uma observação que é necessário fazer é que a API tem a capacidade de retornar no máximo 100 eventos por requisição, ou página, e possui um limite e 400 páginas, desta forma deverão ser analisados repositório que possuam um máximo de 40000 \textit{issues}, sendo que cada \textit{issue} deve possuir um número máximo de 40000 comentários.
 
-\begin{center}
-        \textit{(REPOSITORIES OR 'FREE SOFTWARE' OR 'OPEN SOURCE') AND ('DATA ANALYTICS' OR 'SOFTWARE ANALYTICS' OR 'DATA MINING' OR 'PAGE RANKING') AND (RELEASE OR 'RELEASE PLANNING' OR 'SOFTWARE RELEASE PLANNING')}
-\end{center}
+\section{Método de Intervenção}
+\label{met:int}
+A intervenção é a busca, mineração e análise das \textit{issues} dos repositórios. Para a realização desta tarefa foi selecionada a linguagem de programação Python.O Python é uma linguagem de programação dinâmica, interpretada, de alto nível e de  uso geral criada por Guido Van Rossum. Esta linguagem possui estruturas de dados de alto nível, é dinamicamente tipada e é muito atrativa para o desenvolvimento rápido de aplicações e scripts~\cite{python}.
 
-A base digital escolhida foi a Scopus. A \textit{string} foi aplicada e os principais artigos que norteaream esta monografia foram recuperados do conjunto de resultados retornado.
-
-Portanto, este primeiro trabalho de conclusão de curso é guiado por uma questão de pesquisa, além de se utilizar de alguns instrumentos do protocolo proposto por \citeonline{guidelines-2007}. Inicialmente será utilizado um projeto de software-livre como exemplo de uso, para explorar a viabilidade do uso das técnicas de mineração e análise sugeridas. 
-
-\section{Tecnologias Utilizadas}
-\label{met:tec}
-Para a realização deste trabalho, foram escolhidas as ferramentas e serviços que serão utilizadas para a gerencia de atividades, repositórios de código e texto e desenvolvimento. As escolhas foram feitas com base na experiência de uso destas ferramentas.
-
-\subsection{Git}
-\label{met:tec:git}
-Git é uma ferramenta de controle de versão gratuita e de código aberto criada por Linus Torvalds em 2005~\cite{chacon}. Neste trabalho o Git foi utilizado para controle de versão dos códigos utilizados na implementação do trabalho e deste texto.
-
-\subsection{Github}
-\label{met:tec:github}
-O Github é um serviço que provê a utilização do Git em uma plataforma Web. Ele disponibiliza repositórios remotos para armazenamento de código, wikis e serviços de \textit{tracking} de issues~\cite{github}. Além disto, o Github ainda possui uma API para que permite alterar e consultar repositórios utilizando requisições HTTP.
-
-\subsection{Gitlab}
-\label{met:tec:gitlab}
-O Gitlab, assim como o Github, é um serviço que provê a utilização do Git como uma plataforma Web. Ele também possui repositórios remotos para armazenamento de código, wikis, serviços de \textit{tracking de issues}. Porém diferentemente do Github, o Gitlab é um software livre licenciado sob a licença MIT~\cite{gitlab}.
-
-\subsection{Python}
-\label{met:tec:python}
-Python é uma linguagem de programação dinâmica, interpretada, de alto nível e de  uso geral criada por Guido Van Rossum. Esta linguagem possui estruturas de dados de alto nível, é dinamicamente tipada e é muito atrativa para o desenvolvimento rápido de aplicações e scripts~\cite{python}. Neste trabalho, a linguagem Python foi utilizada para a criação de scripts e a execução do algoritmo de ranqueamento de páginas.
-
-
-\section{Estudo de Caso}
-\label{met:est}
-
-Diversos fatores tornam a pesquisa empírica particularmente difícil na engenharia de software, e por este motivo trabalhos como  \cite{shaw} e \cite{empiricalSoftware} foram propostos para ajudar no desenvolvimento da pesquisa neste tópico. Um dos trabalhos mais importantes neste tópico foi proposto por \cite{empiricalSoftware}, e teve como objetivo propor uma estrutura baseada na tomada de decisões para a seleção de estratégias de pesquisa empíricas na engenharia de software.
-
-A pesquisa empírica pode ser realizada de várias formas, e por isto pode ser um desafio saber quais métodos devem ser aplicados a cada caso. Este arcabouço de metodologias, como por exemplo, o estudo de caso, a pesquisa-ação e a \textit{design science research}, dão ao pesquisador diversas opções para trabalhar, funcionando como uma caixa de ferramentas, porém, a escolha certa da metodologia a ser aplicada em grande parte dos casos, não é uma tarefa trivial~\cite{empiricalSoftware}.
-
-Nesta monografia foram utilizados alguns dos elementos propostos por~\cite{shaw} e~\cite{empiricalSoftware} para organizar e sistematizar o trabalho. A estrutura que serviu de apoio para esta primeira parte do trabalho foi um exemplo de uso, onde é utilizado um projeto de \textit{software} livre para a utilização do algoritmo proposto. Na segunda etapa deste trabalho este exemplo de uso deve ser evoluído para possuir a estrutura de um estudo de caso.
-
-Um estudo de caso é uma investigação experimental que investiga um fenômeno contemporâneo dentro de seu contexto da vida real, em um estudo de caso, os limites entre o fenômeno e o contexto não estão claramente definidos. O fator motivador para a escolha deste método de pesquisa é que ele não requer controle sobre os eventos por parte do pesquisador~\cite{yin}.
-
-O primeiro componente importante para a elaboração de um estudo de caso é a definição de uma questão de pesquisa, conforme definida na sessão~\ref{int:que}. O segundo componente necessário é uma proposição de estudo que deve ser feita com base na questão de pesquisa para que seja possível responde-la, no caso deste trabalho é como podemos relacionar a relevância das \textit{issues} de um projeto com as \textit{features}, de forma a apoiar decisões de planejamento de \textit{release}. O terceiro ponto do estudo de caso é a unidade de análise, ou seja a definição do 'caso', que, para este trabalho, é o SBP.
-
-Os próximos componentes do estudo de caso estão relacionados a como os dados das proposições estão unidos e quais são critérios de interpretação das descobertas. Neste estudo, são relacionados dados da Wiki, dos \textit{milestones}, das \textit{issues} e dos comentários dos repositórios de código com a relevância das \textit{issues}, para isto é utilizado como parâmetro o ranque das \textit{issues} para determinar quais delassão mais importantes dentro do espaço amostral.
-
-Desta forma, podemos definir os componentes do estudo de caso como os seguintes:
+O Python foi escolhido como linguagem principal para o desenvolvimento da solução proposta pela quantidade de bibliotecas e ferramentas disponíveis para trabalhar com requisições web, busca e análise textual e criação, análise e visualização de grafos. A utilização destas ferramentas tem o objetivo de facilitar as análises realizadas neste estudo de forma a reduzir o trabalho de implementação de algoritmos que já são extremamente usados e estudados. Dentre as bibliotecas pesquisadas, as principais e que foram utilizadas neste trabalho foram:
 
 \begin{itemize}
-    \item \textbf{Questão de Pesquisa:} Questão que baseia o estudo, definida em~\ref{int:que}.
-    \item \textbf{Proposições:} Como a utilização de \textit{Software Analytics} pode ajudar nas
-    nas tomadas de decisões de priorização de \textit{Release Planning}.
-    \item \textbf{Unidade de Análise:} Neste trabalho, um caso é definido como um repositório
-        de código cuja organização é feita dentro do repositório nas Wikis, \textit{milestones}
-        e \textit{issues}.
+    \item \textbf{Jellyfish:} Biblioteca Python para a realização de correspondência aproximada de textos de palavras, podendo realizar a comparação entre distancia de palavras com utilização de algoritmos como os de: Levenshtein, Jaro-Winkler e Hamming.
+    \item \textbf{NetworkX:} Pacote Python para a criação, manipulação e estudo de estruturas, dinâmicas e funções de redes complexas. Pode ser utilizada para geração de grafos randômicos e sintéticos e possui diversos algoritmos para análise de redes como o algoritmo de ranqueamento de páginas e o Hits.
+    \item \textbf{NLTK:} Abreviação para \textit{Natural Languagem Toolkit}, é uma plataforma para a construção de programas Python que trabalhem com dados compostos por linguagem humana. Possui diversas ferramentas para processamento de texto em linguagens naturais, oferecendo suporte para o português e o inglês.
 \end{itemize}
 
+É importante citar que todas essas bibliotecas e ferramentas utilizadas são livres, de forma que o código fonte de cada uma delas pode ser baixado, executado e alterado para a utilização neste estudo.
+
+Utilizando estas ferramentas foi criado o \textit{script} descrito no apêndice~\ref{ape:cod}. Este \textit{script} realiza a função de buscar no repositório definido as \textit{issues} e os comentários referentes a elas. Depois da execução deste primeiro passo, é realizada uma análise textual para determinar se uma \textit{issue} foi mencionada nos comentários de outra. Desta forma, foi gerado um grafo direcionado onde para cada marcação que uma \textit{issue} possui era adicionada uma aresta para ela. Assim que o grafo foi gerado, utilizou-se o algoritmo de ranqueamento de páginas para determinar quais vértices, representados pelas \textit{issues}, são os mais revelantes.
+
+\section{Analise dos Resultados}
+\label{met:res}
+
+Nesta primeira etapa do trabalho a analise dos resultados foi realizada manualmente, porém espera-se que para a etapa seguinte seja possível realizar esta analise de forma automatizada utilizando a biblioteca \textit{Jellyfish} apresentada na Seção~\ref{met:int}.
+
+Para que fosse possível analisar os dados gerados pela intervenção foi feita a comparação manual da relevância das \textit{issues} analisadas e o planejamento de \textit{release} presente na \textit{Wiki} do projeto escolhido. Isso foi possível pois o projeto do Software Público Brasileiro, ou SPB, possui a característica de ter organizado todo o planejamento de suas duas últimas \textit{releases}, ou seja a \textit{release} 4 e 5, inteiramente dentro do repositório de código.
+
+Sendo assim, foi possível alinhar o texto das \textit{issues} mais relevantes com as \textit{features} consideradas estratégicas para estas \textit{releases} e desta forma determinar se a intervenção teve resultados satisfatórios.
+
 \section{Considerações Finais do Capitulo}
-Neste capitulo foram apresentadas as principais estruturas, técnicas e mecanismos de pesquisa utilizados para a elaboração desta monografia. Primeiramente foi apresentada a metodologia de pesquisa e a formulação de um \textit{string} de busca, posteriormente são apresentadas as principais ferramentas utilizadas para nesta primeira etapa do trabalho e, finalmente, é apresentada a estrutura atual do exemplo de uso e uma proposta de estrutura para a próxima etapa deste trabalho. No próximo capitulo é apresentado todo o referencial teórico a respeito de \textit{Software Analytics} e \textit{Page Ranking} que fundamentaram este trabalho e como a aplicação destas técnicas podem ajudar a responder as questões propostas e discutidas neste capitulo e na introdução.
+Neste capitulo foram apresentadas as principais estruturas, técnicas e ferramentas utilizados para a elaboração desta monografia. Primeiramente foi apresentada a metodologia de pesquisa e a identificação da população de pesquisa, o método de intervenção e de análise de resultados. Logo após cada um destes pontos é discutido, de forma a justificar a escolha dos repositórios do Github como população, a utilização de busca, mineração e análise dos dados dos repositórios utilizando o Python, e como a análise dos resultados foi feita nesta primeira etapa do trabalho. No próximo capitulo será apresentado como estas técnicas foram utilizadas para que fosse possível executar o exemplo de uso que faz parte desta monografia e alguns resultados colhidos a partir deste exemplo.
 
 

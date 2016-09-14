@@ -2,12 +2,162 @@
 
 \partapendices
 
-\chapter{Primeiro Apêndice}
-
-Texto do primeiro apêndice.
-
-\chapter{Segundo Apêndice}
-
-Texto do segundo apêndice.
-
+\chapter{\textit{Script} Para Mineração e Análise das \textit{Issues} do SPB}
+\label{ape:cod}
+\begin{lstlisting}[language=Python, caption=Algoritmo para mineração e análise das \textit{issues} do SPB]
+ #!/usr/bin/env python3
+ import os
+ import json
+ import nltk
+ import requests
+ from requests.packages.urllib3.exceptions import InsecureRequestWarning
+ import networkx as nx
+ import matplotlib.pyplot as plt
+ from collections import OrderedDict
+ 
+ #Disabling insecure warning because of spb certificate problems
+ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+ 
+ '''
+ usage ./page_ranking
+ '''
+ def get_repo_issues():
+     """
+     Make HTTP GET request on Software Publico Gitlab and recover all issues
+     on SoftwarePublico/SoftwarePublico repo
+     """
+     issues_json = []
+     if not os.path.isfile('./issues.json'):
+         for page_number in range(1, 9):
+             issues_json += requests.get('https://www.softwarepublico.gov.br/gitlab/api/v3/'
+                                         +'projects/30/issues?page=' + str(page_number) +
+                                         '&per_page=100&private_token=pUvEiwMsSgJ2JU7DGiaf',
+                                         verify=False).json()
+         with open('issues.json', 'w') as outfile:
+             json.dump(issues_json, outfile)
+     else:
+         with open('issues.json', 'r') as infile:
+             issues_json = json.load(infile)
+     return issues_json
+ 
+ def get_repo_milestones():
+     """
+     Make HTTP GET request on Software Publico Gitlab and recover all milestones
+     on SoftwarePublico/SoftwarePublico repo
+     """
+     milestones_json = []
+     if not os.path.isfile('./milestones.json'):
+         for page_number in range(1, 2):
+             milestones_json += requests.get('https://www.softwarepublico.gov.br/gitlab/api/v3/'
+                                             +'projects/30/milestones?page=' + str(page_number) +
+                                             '&per_page=100&private_token=pUvEiwMsSgJ2JU7DGiaf',
+                                             verify=False).json()
+         with open('milestones.json', 'w') as outfile:
+             json.dump(milestones_json, outfile)
+     else:
+         with open('milestones.json', 'r') as infile:
+             milestones_json = json.load(infile)
+     return milestones_json
+ 
+ 
+ def get_issues_comments(issue_id):
+     """
+     Make HTTP GET request on Software Publico Gitlab and recover all commentaries
+     from one issue
+     """
+     comments_json = []
+     if not os.path.exists('./issues_comments'):
+         os.makedirs('./issues_comments')
+ 
+     if not os.path.isfile('./issues_comments/issue_'+str(issue_id)+'_comments.json'):
+         comments_json = requests.get('https://www.softwarepublico.gov.br/gitlab/api/v3/'
+                                      +'projects/30/issues/'+str(issue_id)+
+                                      '/notes?&per_page=100&private_token=pUvEiwMsSgJ2JU7DGiaf',
+                                      verify=False).json()
+         with open('./issues_comments/issue_'+str(issue_id)+'_comments.json', 'w') as outfile:
+             json.dump(comments_json, outfile)
+     else:
+         with open('./issues_comments/issue_'+str(issue_id)+'_comments.json', 'r') as infile:
+             comments_json = json.load(infile)
+     return comments_json
+ 
+ 
+ def gen_milestone_dict():
+     """
+     Generates a valid dict with milestone id as key and issues linked as value
+     """
+     milestones_dict = {}
+     issues = get_repo_issues()
+     milestones = get_repo_milestones()
+     for milestone in milestones:
+         milestones_dict[milestone['iid']] = []
+         for issue in issues:
+             try:
+                 if issue['milestone']['iid'] == milestone['iid']:
+                     milestones_dict[milestone['iid']].append(issue['iid'])
+             except TypeError:
+                 continue
+     return milestones_dict
+ 
+ def gen_issue_dict():
+     """
+     Generates a valid dict with issue id as key and issues linked as value
+     """
+     issues = get_repo_issues()
+     #print(issues[1]['milestone']['iid'])
+     issues_dict = {}
+     for issue in issues:
+         issues_dict[issue['iid']] = []
+         comments = get_issues_comments(issue['id'])
+         for comment in comments:
+             comment_tokens = nltk.word_tokenize(comment['body'])
+             for index, word in enumerate(comment_tokens):
+                 if index < (len(comment_tokens) - 1):
+                     if word == '#' and comment_tokens[index+1][:-1].isdigit():
+                         if comment_tokens[index+1][-1] == '_':
+                             issues_dict[issue['iid']].append(comment_tokens[index+1][:-1])
+     return issues_dict
+ 
+ def gen_graph():
+     """
+     Generates networkx valid DAG based on the issues dictionary
+     """
+     graph = nx.DiGraph()
+     issues_dict = gen_issue_dict()
+    # milestones_dict = gen_milestone_dict()
+     for key in issues_dict:
+         graph.add_node(key)
+     for key, value in issues_dict.items():
+         if isinstance(value, list):
+             for node in value:
+                 graph.add_edge(key, node)
+         else:
+             graph.add_edge(key, value)
+ 
+    # for key, value in milestones_dict.items():
+    #     graph.add_node(key)
+    #        for item1 in value:
+    #           for item2 in value:
+    #              graph.add_edge(item1, item2)
+     return graph
+ 
+ def run_pagerank():
+     """
+     Runs pagerank on all SoftwarePublico/SoftwarePublico issues
+     """
+     graph = gen_graph()
+     page_rank = nx.pagerank(graph)
+     ranking = []
+     for key, value in page_rank.items():
+         ranking.append(value)
+     
+     od = OrderedDict(sorted(page_rank.items(), key=lambda t: t[1]))
+     print(od)
+     nx.draw_spring(graph)
+     plt.show(block=False)
+     plt.savefig("Graph.png", format="PNG")
+     return 0
+ 
+run_pagerank()
+\end{lstlisting}
 \end{apendicesenv}

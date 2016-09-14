@@ -31,6 +31,7 @@ A disponibilidade de dados confiáveis, na frequência necessária, permite que 
 \end{itemize}
 
     Os métodos atuais de planejamento de \textit{release} utilizam diversas fontes de informação para aprimorar as decisões e diminuir incertezas, estas fontes podem incluir: \textit{stakeholders}, dados coletados de desenvolvedores, informações de \textit{bugtrackers}, entre outras. Os principais defeitos da abordagem tradicional de planejamento de \textit{release} estão relacionados a incapacidade de lidar com as mudanças constantes que estão acontecendo durante a evolução do projeto. A literatura sugere várias técnicas e métodos para reduzir as incertezas deste processo,~\cite{artAndScience}, por exemplo, sugere a utilização de \textit{Software Analytics} como caminho para auxiliar na tomada de decisões para o ciclo de desenvolvimento.
+
 Neste trabalho serão investigadas técnicas e ferramentas de mineração em repositórios de software para recuperar e analisar dados que possam apoiar a tomada de decisão sobre na atividade de planejamento de \textit{releases}.
 
 \section{Problema}
@@ -47,10 +48,8 @@ O planejamento de \textit{release} é conhecido por ser um problema cognitivamen
 O objetivo geral deste trabalho consiste na realização de um estudo de caso onde será avaliada a relação entre relevância das \textit{issues} de um projeto e a priorização de atividades em um processo de planejamento de \textit{release}. Como o trabalho foi dividido em duas fases, os objetivos específicos da primeira fase foram definidos como:
 
 \begin{itemize}
-    \item Levantar fundamentação teórica necessária para apoiar o trabalho.
     \item Definir técnicas e ferramentas de mineração e recuperação de de dados de software que deverão ser utilizadas.
-    \item Definir e caracterizar o projeto para estudo de caso.
-    \item Montar infraestrutura computacional necessária para a realização do trabalho.
+    \item Propor uma abordagem de verificação da correlação entre a relevância das \textit{issues} de um repositório e o planejamento de \textit{sprint}.
 \end{itemize}
 
 \section{Questão de Pesquisa}
@@ -61,7 +60,7 @@ Diferentemente de outros campos da ciência e engenharia que possuem paradigmas 
 Com base no problema identificado, foi possível derivar uma questão de pesquisa que deve ser respondida ao final deste trabalho.
 
 \begin{center}
-    \textit{Dada a relevância das \textit{issues} de um projeto de software, como podemos relacioná-las com as \textit{features} de um projeto para apoiar decisões durante a fase de planejamento de \textit{release}?}
+    \textit{Como podemos verificar a correlação entre \textit{issues} consideradas relevantes e as funcionalidades planejadas para uma \textit{release}?}
 \end{center}
 
 \subsection{Questões Secundárias}
@@ -71,10 +70,8 @@ A partir desta questão inicial, é possível definir questões secundárias par
 
 \begin{itemize}
     \item Qual é a melhor maneira de calcular a relevância das \textit{issues} de um projeto?
-    \item Como podemos determinar relação entre as relevância das \textit{issues} de um projeto e o planejamento de \textit{sprint}?
-    \item Quais técnicas podem ser utilizadas para validar as soluções desenvolvidas neste trabalho?
+    \item Como podemos determinar relação entre as relevância das \textit{issues} de um projeto e o planejamento de \textit{sprint} para apoiar a tomada de decisão/priorização?
 \end{itemize}
-
 
 \section{Organização do Trabalho}
 \label{int:org}
@@ -82,8 +79,8 @@ Este trabalho foi dividido em cinco capítulos, são eles:
 
 \begin{itemize}
     \item \textbf{Capítulo 1 - Introdução:} Neste capitulo encontra-se a introdução do trabalho que está dividida nos seguintes tópicos: contexto do trabalho, problema, objetivos e questão de pesquisa.
-    \item \textbf{Capítulo 2 - Metodologia:} Neste capitulo apresenta-se, primeiramente, a metodologia de pesquisa utilizada e, posteriormente, são apresentadas as tecnologias utilizadas para tornar possível a execução deste estudo.
-    \item \textbf{Capítulo 3 - Referencial Teórico:} Neste capitulo são apresentados os conceitos teóricos que fundamentaram este estudo, quais algoritmos serão utilizados e como eles serão aplicados para a execução do exemplo de uso.
-    \item \textbf{Capítulo 4 - Exemplo de Uso:} Neste capitulo descreveu-se como o ranqueamento de \textit{issues} foi realizado no projeto escolhido, posteriormente, são apresentados os resultados deste ranqueamento.
+    \item \textbf{Capítulo 2 - Referencial Teórico:} Neste capitulo são apresentados os conceitos teóricos que fundamentaram este estudo, quais algoritmos serão utilizados e como eles serão aplicados para a execução do exemplo de uso.
+    \item \textbf{Capítulo 3 - Metodologia:} Neste capitulo apresenta-se, primeiramente, a metodologia de pesquisa utilizada e, posteriormente, são apresentadas as tecnologias utilizadas para tornar possível a execução deste estudo.
+    \item \textbf{Capítulo 4 - Ranqueamento de \textit{Issues} no SPB:} Neste capitulo descreveu-se como o ranqueamento de \textit{issues} foi realizado no projeto escolhido, posteriormente, são apresentados os resultados deste ranqueamento.
     \item \textbf{Capítulo 5 - Conclusão e Próximos Passos:} Além das considerações finais relacionadas ao exemplo de uso realizada nesta primeira parte do trabalho, descreveu-se os objetivos planejados para a segunda parte do trabalho.
 \end{itemize}
